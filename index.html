@@ -307,16 +307,20 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 }
 @media(max-width:640px){
   .wrap{padding:0 16px}
-  #pillar-sel-row{grid-template-columns:1fr 1fr;gap:6px}
-  .psel{padding:9px 10px;gap:7px}
-  .psel-label{font-size:9px;letter-spacing:.02em;line-height:1.3}
-  .psel-dot{width:24px;height:24px;font-size:12px}
-  #core-tabs{padding:0 12px}
-  .core-tab{padding:11px 12px;font-size:10px}
+  #pillar-sel-row{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+  .psel{padding:10px 8px;gap:6px;flex-direction:column;align-items:center;text-align:center;justify-content:center;min-height:72px}
+  .psel-label{font-size:9px;letter-spacing:.02em;line-height:1.4;white-space:normal;text-align:center}
+  .psel-dot{width:26px;height:26px;font-size:13px;flex-shrink:0}
+  #core-tabs{padding:0 12px;justify-content:center}
+  #core-tabs .core-tab[data-tab="maturity"],#core-tabs .core-tab[data-tab="coreinfo"]{display:none}
+  #core-tabs .core-tab[data-tab="pillars"]{margin:0 auto}
+  #pillars-secondary-nav{display:flex;justify-content:center;gap:8px;padding:14px 12px 0;border-top:1px solid rgba(245,240,232,.07);margin-top:16px}
+  #pillars-secondary-nav .core-tab{padding:10px 16px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;cursor:pointer;color:var(--txt-d);font-family:var(--fi);border-bottom:2px solid transparent;white-space:nowrap;transition:.2s;flex-shrink:0;display:flex;align-items:center;gap:6px}
+  #pillars-secondary-nav .core-tab.active{color:var(--dourado);border-bottom-color:var(--dourado)}
   #core-panels{padding:20px 14px 36px}
-  .edu-inline-item{flex-direction:row;gap:5px;padding:2px 0}
-  .edu-inline-degree{font-size:13px}
-  .edu-inline-school{font-size:11px}
+  .edu-inline-item{font-size:12px;padding:3px 0;gap:4px}
+  .edu-inline-degree{font-size:12px}
+  .edu-inline-school{font-size:11px;white-space:nowrap}
   .hero-inner{padding:0 16px}
   .ev-grid{grid-template-columns:1fr 1fr}
   .hero-actions{flex-direction:column;align-items:flex-start}
@@ -473,6 +477,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
             <button class="psel" data-key="o"><div class="psel-dot" style="background:#1D5FA5;color:#fff">O</div><span class="psel-label">Operational Excellence</span></button>
             <button class="psel" data-key="r"><div class="psel-dot" style="background:#1D9E75;color:#fff">R</div><span class="psel-label">Relationship &amp; Loyalty</span></button>
             <button class="psel" data-key="e"><div class="psel-dot" style="background:#C9A84C;color:#141F2B">E</div><span class="psel-label">Experience Evolution</span></button>
+          </div>
+          <!-- Secondary nav: mobile only — aparece logo abaixo dos quadrantes -->
+          <div id="pillars-secondary-nav" style="display:none">
+            <button class="core-tab" data-tab="maturity">Níveis de Maturidade</button>
+            <button class="core-tab" data-tab="coreinfo">
+              <span class="tab-dot" style="background:var(--dourado);color:var(--azul-dark);font-size:11px">★</span>
+              CORE Integrado
+            </button>
           </div>
           <div id="pillar-detail-card" style="display:none"></div>
           <div id="pillar-empty-state">
@@ -702,15 +714,15 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <h2 class="sobre-name">Daniel <em>Palhano.</em></h2>
         <div class="sobre-divider"></div>
         <p class="sobre-text">Em mais de 20 anos dentro de operações reais, vi de perto algo que se repete: empresas que investem em produto, marketing e tecnologia, mas perdem clientes porque a experiência não acompanha. Não por falta de esforço. Por falta de estrutura.</p>
-        <p class="sobre-text">Trabalhei em empresas como Raízen, LG e Huawei, e nos últimos 10 anos com as maiores empresas de loyalty do Brasil — Smiles, Esfera e Livelo. Em cada uma delas, o mesmo desafio: conectar estratégia, operação e relacionamento em torno do cliente. Foi dentro dessas operações que a visão do método foi se formando.</p>
+        <p class="sobre-text">Trabalhei em empresas como Raízen, LG e Huawei, e nos últimos 10 anos com as maiores empresas de loyalty do Brasil — Smiles, Esfera e Livelo. Em cada uma delas, o mesmo desafio: <span style="color:var(--dourado-bright)">conectar estratégia, operação e relacionamento em torno do cliente.</span> Foi dentro dessas operações que a visão do método foi se formando.</p>
         <p class="sobre-text">O Método Órbita CORE não nasceu de teoria. Nasceu de anos identificando onde as empresas deixam valor na mesa — e construindo estruturas para que a experiência do cliente gere retenção, fidelização e crescimento real.</p>
         <div class="edu-inline-label">Formação Acadêmica</div>
         <ul class="edu-inline-list">
           <li class="edu-inline-item"><span class="edu-inline-degree">Comunicação Social - Jornalismo</span><span class="edu-inline-school">· UFPR</span></li>
-          <li class="edu-inline-item"><span class="edu-inline-degree">MBA em Gestão Estratégica de Negócios</span><span class="edu-inline-school">· Anhanguera</span></li>
+          <li class="edu-inline-item"><span class="edu-inline-degree">MBA em Gestão Estratégica de Negócios</span><span class="edu-inline-school">· Universidade Anhanguera</span></li>
           <li class="edu-inline-item"><span class="edu-inline-degree">International Marketing &amp; Business Strategy</span><span class="edu-inline-school">· University of La Verne (EUA)</span></li>
           <li class="edu-inline-item"><span class="edu-inline-degree">Pós-graduação em Direito do Consumidor</span><span class="edu-inline-school">· Faculdade Líbano</span></li>
-          <li class="edu-inline-item"><span class="edu-inline-degree">Pós-graduação em Neurociência do Comportamento</span><span class="edu-inline-school">· Faculdade Líbano (em andamento)</span></li>
+          <li class="edu-inline-item"><span class="edu-inline-degree">Pós-graduação em Neurociência</span><span class="edu-inline-school">· Faculdade Líbano (em andamento)</span></li>
         </ul>
       </div>
     </div>
@@ -874,6 +886,26 @@ function activatePillar(k){
 }
 function switchTab(n){document.querySelectorAll(".core-tab").forEach(function(b){b.classList.toggle("active",b.dataset.tab===n)});document.querySelectorAll(".core-panel").forEach(function(p){p.classList.toggle("visible",p.id==="cpanel-"+n)})}
 document.querySelectorAll(".core-tab").forEach(function(b){b.addEventListener("click",function(){switchTab(b.dataset.tab)})});
+// Mobile secondary nav setup
+function setupSecondaryNav(){
+  var secNav=document.getElementById("pillars-secondary-nav");
+  if(!secNav)return;
+  var isMobile=window.innerWidth<=640;
+  secNav.style.display=isMobile?"flex":"none";
+  secNav.querySelectorAll(".core-tab").forEach(function(b){
+    b.classList.remove("active");
+    b.addEventListener("click",function(){switchTab(b.dataset.tab)});
+  });
+}
+function syncSecondaryTabs(n){
+  var secNav=document.getElementById("pillars-secondary-nav");
+  if(!secNav)return;
+  secNav.querySelectorAll(".core-tab").forEach(function(b){b.classList.toggle("active",b.dataset.tab===n)});
+}
+var origSwitchTab=switchTab;
+switchTab=function(n){origSwitchTab(n);syncSecondaryTabs(n);};
+setupSecondaryNav();
+window.addEventListener("resize",setupSecondaryNav);
 PKS.forEach(function(k){document.getElementById("v2-node-"+k).addEventListener("click",function(){activatePillar(k)})});
 document.querySelectorAll(".psel").forEach(function(b){b.addEventListener("click",function(){activatePillar(b.dataset.key)})});
 document.getElementById("core-center-btn").addEventListener("click",function(){
