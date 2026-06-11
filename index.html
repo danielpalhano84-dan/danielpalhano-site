@@ -128,8 +128,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 #pillar-hint{text-align:center;font-size:11px;color:var(--dourado);font-style:italic;letter-spacing:.03em;margin-bottom:16px;opacity:.85;display:flex;align-items:center;justify-content:center;gap:6px}
 #pillar-hint::before,#pillar-hint::after{content:'';display:block;height:1px;width:28px;background:var(--dourado);opacity:.4}
 
-#pillar-empty-state{text-align:center;padding:48px 0;color:var(--txt-d);font-size:15px;line-height:1.6}
-#pillar-empty-state span{display:block;font-size:34px;margin-bottom:12px;opacity:.38}
+
 #pillar-detail-card{animation:fadeUp .25s ease}
 .pd-header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
 .pd-badge{width:52px;height:52px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-weight:600;font-size:26px}
@@ -498,11 +497,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
             </button>
           </div>
           <div id="pillar-detail-card" style="display:none"></div>
-          <div id="pillar-empty-state">
-            <span style="font-size:28px;opacity:.35;display:block;margin-bottom:12px">◎</span>
-            <div style="font-size:15px;color:var(--txt-d);margin-bottom:8px">Selecione um pilar acima</div>
-            <div style="font-size:12px;color:rgba(245,240,232,.25);line-height:1.5">Clique em C · O · R · E para entender<br>o que cada pilar representa</div>
-          </div>
+
 
         </div>
       </div>
@@ -888,7 +883,7 @@ function activatePillar(k){
   document.querySelectorAll(".psel").forEach(function(b){b.classList.toggle("active",b.dataset.key===k)});
   document.getElementById("core-center-btn").classList.remove("active");
   var p=PILLARS[k],card=document.getElementById("pillar-detail-card");
-  document.getElementById("pillar-empty-state").style.display="none";card.style.display="block";
+  card.style.display="block";
   var hint=document.getElementById("pillar-hint");if(hint)hint.style.display="none";
   card.innerHTML=
     '<div class="pd-header"><div class="pd-badge" style="background:'+p.color+';color:'+p.tc+'">'+k.toUpperCase()+'</div><div><div class="pd-eyebrow" style="color:'+p.color+'">'+p.label+'</div><div class="pd-name">'+p.name+'</div></div></div>'+
