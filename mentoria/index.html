@@ -538,17 +538,17 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .section-light .enc-dot{background:var(--creme)}
 
 /* ===== HERO MENTORIA ===== */
-.s-mhero{padding:140px 0 80px;position:relative;overflow:hidden}
+.s-mhero{padding:140px 0 80px;position:relative;overflow:hidden;text-align:center}
 .s-mhero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;border:1px solid rgba(184,153,104,.12);pointer-events:none}
 .s-mhero::after{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;border:1px solid rgba(184,153,104,.08);pointer-events:none}
 .mhero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);margin-bottom:18px}
-.mhero-title{font-family:var(--fm);font-weight:200;font-size:clamp(30px,5vw,52px);line-height:1.12;color:var(--txt);max-width:780px}
+.mhero-title{font-family:var(--fm);font-weight:200;font-size:clamp(30px,5vw,52px);line-height:1.12;color:var(--txt);max-width:780px;margin:0 auto}
 .mhero-title em{font-style:italic;color:var(--dourado-bright)}
-.mhero-sub{font-size:17px;line-height:1.7;color:var(--txt-m);max-width:600px;margin:22px 0 32px}
-.mhero-meta{display:flex;flex-wrap:wrap;gap:28px;margin:28px 0 36px}
+.mhero-sub{font-size:17px;line-height:1.7;color:var(--txt-m);max-width:600px;margin:22px auto 32px}
+.mhero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin:28px 0 36px}
 .mhero-meta-item{font-size:13px;color:var(--txt-d)}
 .mhero-meta-item strong{display:block;font-family:var(--fm);font-size:20px;font-weight:300;color:var(--dourado-bright);margin-bottom:2px}
-.mhero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.mhero-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px}
 .mhero-note{font-size:13px;color:var(--txt-d);margin-top:18px}
 
 /* ===== BTNS ===== */
@@ -559,13 +559,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ===== AGITACAO ===== */
 .s-agita{padding:70px 0}
-.agita-head{max-width:640px;margin-bottom:40px}
+.agita-head{max-width:640px;margin:0 auto 40px;text-align:center}
 .agita-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--azul-border);border-radius:var(--radius);overflow:hidden}
 .agita-card{background:var(--creme);padding:30px 22px;text-align:center}
 .agita-num{font-family:var(--fm);font-size:clamp(32px,4vw,44px);font-weight:300;color:var(--dourado-bright);line-height:1}
 .agita-desc{font-size:13px;color:var(--txt-m);line-height:1.5;margin-top:10px}
 .agita-src{font-size:10px;color:var(--txt-d);margin-top:8px;letter-spacing:.04em}
-.agita-closer{margin-top:34px;font-family:var(--fm);font-size:clamp(18px,2.4vw,24px);font-weight:200;color:var(--txt);line-height:1.4;max-width:680px}
+.agita-closer{margin:34px auto 0;font-family:var(--fm);font-size:clamp(18px,2.4vw,24px);font-weight:200;color:var(--txt);line-height:1.4;max-width:680px;text-align:center}
 .agita-closer em{color:var(--dourado-bright);font-style:italic}
 @media(max-width:760px){.agita-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -581,7 +581,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ===== ENCONTROS TIMELINE ===== */
 .s-enc{padding:90px 0}
-.enc-head{max-width:640px;margin-bottom:50px}
+.enc-head{max-width:640px;margin:0 auto 50px;text-align:center}
 .enc-line{position:relative;padding-left:36px;border-left:1px solid var(--azul-border-gold)}
 .enc-item{position:relative;padding-bottom:38px}
 .enc-item:last-child{padding-bottom:0}
@@ -593,17 +593,15 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ===== ENTREGAVEIS ===== */
 .s-deliv2{padding:90px 0}
-.dlv-head{max-width:640px;margin-bottom:44px}
+.dlv-head{max-width:640px;margin:0 auto 44px;text-align:center}
 .dlv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.dlv-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:18px 20px;cursor:pointer;transition:.25s var(--ease)}
-.dlv-card:hover{border-color:var(--azul-border-gold)}
+.dlv-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:18px 20px;transition:.3s var(--ease)}
+.dlv-card:hover{background:var(--dourado);border-color:var(--dourado)}
+.dlv-card:hover .dlv-numb,.dlv-card:hover .dlv-name,.dlv-card:hover .dlv-desc{color:#141F2B}
 .dlv-top{display:flex;align-items:center;gap:12px}
-.dlv-numb{font-family:var(--fm);font-size:14px;color:var(--dourado);min-width:24px}
-.dlv-name{font-size:14.5px;color:var(--txt);font-weight:500;flex:1}
-.dlv-arrow{color:var(--dourado);transition:.25s;font-size:13px}
-.dlv-card.open .dlv-arrow{transform:rotate(90deg)}
-.dlv-desc{font-size:13px;color:var(--txt-m);line-height:1.6;max-height:0;overflow:hidden;opacity:0;transition:.3s var(--ease);padding-left:36px}
-.dlv-card.open .dlv-desc{max-height:120px;opacity:1;margin-top:10px}
+.dlv-numb{font-family:var(--fm);font-size:14px;color:var(--dourado);min-width:24px;transition:.3s var(--ease)}
+.dlv-name{font-size:14.5px;color:var(--txt);font-weight:500;flex:1;transition:.3s var(--ease)}
+.dlv-desc{font-size:13px;color:var(--txt-m);line-height:1.6;padding-left:36px;margin-top:10px;transition:.3s var(--ease)}
 @media(max-width:700px){.dlv-grid{grid-template-columns:1fr}}
 
 /* ===== ANTES/DEPOIS - duas colunas sempre abertas ===== */
@@ -623,7 +621,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ===== DEPOIMENTOS ===== */
 .s-test{padding:70px 0}
-.test-head{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:18px}
+.test-head{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:18px;text-align:center}
 .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .test-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:20px 22px}
 .test-quote{font-size:14px;color:var(--txt-m);line-height:1.65;margin-bottom:14px}
@@ -633,8 +631,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ===== OFERTA ===== */
 .s-ofer{padding:90px 0}
-.ofer-head{max-width:640px;margin-bottom:44px}
-.ofer-note{font-size:13px;color:var(--txt-d);max-width:560px;margin-top:10px;line-height:1.6}
+.ofer-head{max-width:640px;margin:0 auto 44px;text-align:center}
+.ofer-note{font-size:13px;color:var(--txt-d);max-width:560px;margin:10px auto 0;line-height:1.6;text-align:center}
 .ofer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch}
 .ofer-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:26px 20px;display:flex;flex-direction:column}
 .ofer-card.featured{
@@ -674,6 +672,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .mcta-title{font-family:var(--fm);font-size:clamp(26px,4vw,40px);font-weight:200;color:var(--txt);line-height:1.2;max-width:680px;margin:0 auto 16px}
 .mcta-title em{color:var(--dourado-bright);font-style:italic}
 .mcta-sub{font-size:14.5px;color:var(--txt-d);margin-bottom:30px}
+</style>
+<style>
+.edu-simple-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:4px 0 0;padding:0}
+.edu-simple-list li{font-size:14.5px;color:var(--txt-m);line-height:1.5;padding-left:16px;position:relative}
+.edu-simple-list li::before{content:'·';position:absolute;left:0;color:var(--dourado);font-size:18px;line-height:1.3}
 </style>
 </head>
 <body>
@@ -722,7 +725,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <div class="mhero-meta-item"><strong>10</strong>Empresas / turma</div>
     </div>
     <div class="mhero-actions reveal">
-      <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="btn-primary">Quero entender onde estou perdendo →</a>
+      <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="btn-primary">Quero entender onde estou →</a>
       <a href="#metodo" class="btn-ghost">Ver como funciona o método</a>
     </div>
     <div class="mhero-note reveal">Vagas limitadas a 10 empresas por turma</div>
@@ -869,45 +872,45 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <p class="sec-sub" style="margin-top:12px">Documentos reais desenvolvidos com a realidade da sua empresa. Toque em cada um para entender o que é.</p>
     </div>
     <div class="dlv-grid reveal">
-      <div class="dlv-card" data-d="Avaliação dos 4 pilares CORE com pontuação de maturidade por área.">
-        <div class="dlv-top"><span class="dlv-numb">01</span><span class="dlv-name">Diagnóstico Órbita CORE™</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">01</span><span class="dlv-name">Diagnóstico Órbita CORE™</span></div>
+        <div class="dlv-desc">Avaliação dos 4 pilares CORE com pontuação de maturidade por área.</div>
       </div>
-      <div class="dlv-card" data-d="Visualização gráfica dos níveis de maturidade nos 4 pilares.">
-        <div class="dlv-top"><span class="dlv-numb">02</span><span class="dlv-name">Radar de Maturidade</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">02</span><span class="dlv-name">Radar de Maturidade</span></div>
+        <div class="dlv-desc">Visualização gráfica dos níveis de maturidade nos 4 pilares.</div>
       </div>
-      <div class="dlv-card" data-d="Jornada completa com pontos de atrito e oportunidades identificadas.">
-        <div class="dlv-top"><span class="dlv-numb">03</span><span class="dlv-name">Mapa da Jornada do Cliente</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">03</span><span class="dlv-name">Mapa da Jornada do Cliente</span></div>
+        <div class="dlv-desc">Jornada completa com pontos de atrito e oportunidades identificadas.</div>
       </div>
-      <div class="dlv-card" data-d="O que atacar primeiro, ordenado por impacto e viabilidade.">
-        <div class="dlv-top"><span class="dlv-numb">04</span><span class="dlv-name">Matriz de Priorização</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">04</span><span class="dlv-name">Matriz de Priorização</span></div>
+        <div class="dlv-desc">O que atacar primeiro, ordenado por impacto e viabilidade.</div>
       </div>
-      <div class="dlv-card" data-d="Ações concretas para cada um dos 4 pilares CORE.">
-        <div class="dlv-top"><span class="dlv-numb">05</span><span class="dlv-name">Plano de Ação por Pilar</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">05</span><span class="dlv-name">Plano de Ação por Pilar</span></div>
+        <div class="dlv-desc">Ações concretas para cada um dos 4 pilares CORE.</div>
       </div>
-      <div class="dlv-card" data-d="Estratégia em 4 fases: 7, 30, 60 e 90 dias com KPIs por etapa.">
-        <div class="dlv-top"><span class="dlv-numb">06</span><span class="dlv-name">Plano de Retenção 90 Dias</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">06</span><span class="dlv-name">Plano de Retenção 90 Dias</span></div>
+        <div class="dlv-desc">Estratégia em 4 fases: 7, 30, 60 e 90 dias com KPIs por etapa.</div>
       </div>
-      <div class="dlv-card" data-d="Modelo de reunião recorrente para manter o cliente no centro.">
-        <div class="dlv-top"><span class="dlv-numb">07</span><span class="dlv-name">Ritual Semanal de Centralidade</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">07</span><span class="dlv-name">Ritual Semanal de Centralidade</span></div>
+        <div class="dlv-desc">Modelo de reunião recorrente para manter o cliente no centro.</div>
       </div>
-      <div class="dlv-card" data-d="Retenção, recompra, clientes inativos, NPS e indicação.">
-        <div class="dlv-top"><span class="dlv-numb">08</span><span class="dlv-name">Dashboard de Indicadores</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">08</span><span class="dlv-name">Dashboard de Indicadores</span></div>
+        <div class="dlv-desc">Retenção, recompra, clientes inativos, NPS e indicação.</div>
       </div>
-      <div class="dlv-card" data-d="Plano de execução imediata com marcos e critérios de sucesso.">
-        <div class="dlv-top"><span class="dlv-numb">09</span><span class="dlv-name">Roadmap 90 Dias</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">09</span><span class="dlv-name">Roadmap 90 Dias</span></div>
+        <div class="dlv-desc">Plano de execução imediata com marcos e critérios de sucesso.</div>
       </div>
-      <div class="dlv-card" data-d="Plano estratégico de longo prazo com ciclos de evolução.">
-        <div class="dlv-top"><span class="dlv-numb">10</span><span class="dlv-name">Roadmap 12 Meses</span><span class="dlv-arrow">›</span></div>
-        <div class="dlv-desc"></div>
+      <div class="dlv-card">
+        <div class="dlv-top"><span class="dlv-numb">10</span><span class="dlv-name">Roadmap 12 Meses</span></div>
+        <div class="dlv-desc">Plano estratégico de longo prazo com ciclos de evolução.</div>
       </div>
     </div>
   </div>
@@ -975,28 +978,12 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </ul>
         <p class="sobre-text">O <strong>Método Órbita CORE</strong> nasce dessa vivência real, conectando estratégia e operação para gerar retenção e crescimento que aparecem no caixa.</p>
 
-        <div class="edu-inline-label">Formação Acadêmica</div>
-        <ul class="edu-clean-list">
-          <li>
-            <div class="edu-clean-degree">MBA em Gestão Estratégica de Negócios</div>
-            <div class="edu-clean-school">Universidade Anhanguera</div>
-          </li>
-          <li>
-            <div class="edu-clean-degree">International Marketing &amp; Business Strategy</div>
-            <div class="edu-clean-school">University of La Verne (EUA)</div>
-          </li>
-          <li>
-            <div class="edu-clean-degree">Pós-graduação em Neurociência</div>
-            <div class="edu-clean-school">Faculdade Líbano (em andamento)</div>
-          </li>
-          <li>
-            <div class="edu-clean-degree">Pós-graduação em Direito do Consumidor</div>
-            <div class="edu-clean-school">Faculdade Líbano</div>
-          </li>
-          <li>
-            <div class="edu-clean-degree">Comunicação Social — Jornalismo</div>
-            <div class="edu-clean-school">Universidade Federal do Paraná</div>
-          </li>
+        <div class="edu-inline-label">Formação</div>
+        <ul class="edu-simple-list">
+          <li>Comunicação Social — Jornalismo</li>
+          <li>MBA em Gestão Estratégica de Negócios</li>
+          <li>Pós-graduação em Direito do Consumidor e Neurociência</li>
+        </ul>
         </ul>
       </div>      </div>
     </div>
@@ -1008,7 +995,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <div class="test-grid reveal">
       <div class="test-card">
         <p class="test-quote">"O método Órbita Core traduz a experiência do cliente em resultados concretos ao conectar estratégia, operação, relacionamento e evolução contínua de forma prática, estruturada e orientada ao negócio."</p>
-        <div class="test-author">Tábata Antunes</div>
+        <div class="test-author">Thabata Antunes</div>
         <div class="test-role">Especialista em Atendimento e Experiência</div>
       </div>
       <div class="test-card">
@@ -1199,9 +1186,10 @@ function init(){buildOrbit();rafId=requestAnimationFrame(orbitFrame);window.addE
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}
 </script>
 <script>
-// Contadores animados (Agitação)
+// Contadores animados (Agitação) - com easing e delay pra ficar visível crescendo
 (function(){
   var counted = false;
+  function easeOutQuad(t){ return t*(2-t); }
   function animateCounters(){
     if(counted) return; counted = true;
     document.querySelectorAll('.agita-num').forEach(function(el){
@@ -1209,11 +1197,12 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
       var suffix = el.getAttribute('data-suffix') || '';
       var prefix = el.getAttribute('data-prefix') || '';
       var decimals = parseInt(el.getAttribute('data-decimal') || '0');
-      var dur = 1400, start = null;
+      var dur = 1900, start = null;
       function step(ts){
         if(!start) start = ts;
         var p = Math.min((ts-start)/dur, 1);
-        var val = target * p;
+        var eased = easeOutQuad(p);
+        var val = target * eased;
         el.textContent = prefix + val.toFixed(decimals) + suffix;
         if(p < 1) requestAnimationFrame(step);
         else el.textContent = prefix + target.toFixed(decimals) + suffix;
@@ -1224,29 +1213,14 @@ if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded"
   var agitaSection = document.querySelector('.s-agita');
   if(agitaSection){
     var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting) animateCounters(); });
-    }, {threshold:.3});
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          setTimeout(animateCounters, 350);
+        }
+      });
+    }, {threshold:.15, rootMargin:"0px 0px -10% 0px"});
     obs.observe(agitaSection);
   }
 })();
-
-// Cards expansiveis (Entregaveis)
-document.querySelectorAll('.dlv-card').forEach(function(card){
-  var descEl = card.querySelector('.dlv-desc');
-  descEl.textContent = card.getAttribute('data-d');
-  card.addEventListener('click', function(){
-    card.classList.toggle('open');
-  });
-});
-
-// Toggle Antes/Depois
-document.querySelectorAll('.ad-tab').forEach(function(tab){
-  tab.addEventListener('click', function(){
-    document.querySelectorAll('.ad-tab').forEach(function(t){t.classList.remove('active')});
-    document.querySelectorAll('.ad-panel').forEach(function(p){p.classList.remove('active')});
-    tab.classList.add('active');
-    document.getElementById('ad-'+tab.dataset.tab).classList.add('active');
-  });
-});
 </script>
 </html>
