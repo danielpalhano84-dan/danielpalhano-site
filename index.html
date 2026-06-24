@@ -212,6 +212,26 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .s-core{background:var(--azul-dark);border-top:1px solid rgba(184,153,104,.1);padding:96px 0 0;overflow:hidden}
 .core-header{text-align:center;margin-bottom:56px}
 .core-tagline{font-size:16px;color:var(--txt-m);max-width:600px;margin:20px auto 0;line-height:1.7;text-align:center}
+.core-grid-static{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px;max-width:880px;margin-left:auto;margin-right:auto}
+.core-static-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:24px;transition:.3s var(--ease);cursor:pointer}
+.core-static-card:hover,.core-static-card.active{background:var(--hc);border-color:var(--hc)}
+.core-static-letter{width:38px;height:38px;line-height:38px;border-radius:50%;text-align:center;font-family:var(--fm);font-size:17px;color:#fff;margin-bottom:14px;transition:.3s var(--ease)}
+.core-static-name{font-family:var(--fm);font-size:18px;font-weight:300;color:var(--txt);margin-bottom:8px;transition:.3s var(--ease)}
+.core-static-desc{font-size:13.5px;color:var(--txt-m);line-height:1.6;transition:.3s var(--ease)}
+.core-static-card:hover .core-static-name,.core-static-card.active .core-static-name,.core-static-card:hover .core-static-desc,.core-static-card.active .core-static-desc{color:var(--hctxt)}
+.core-integrado-note{max-width:680px;margin:34px auto 0;text-align:center;font-size:14px;color:var(--txt-m);line-height:1.65;padding-bottom:80px}
+.core-integrado-note strong{color:var(--txt)}
+.orb-node-v2.node-active{box-shadow:0 0 0 5px rgba(255,255,255,.35);transform:scale(1.12)}
+@media(max-width:700px){.core-grid-static{grid-template-columns:1fr}}
+.section-light{background:var(--creme);--txt:#1E2A3A;--txt-m:rgba(30,42,58,.7);--txt-d:rgba(30,42,58,.45);--azul-card:rgba(30,42,58,.035);--azul-border:rgba(30,42,58,.12);--azul-border-gold:rgba(138,107,58,.4);--dourado:#8A6B3A;--dourado-bright:#6B5024}
+.s-test{padding:70px 0}
+.test-head{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:18px;text-align:center}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:stretch}
+.test-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:20px 22px;display:flex;flex-direction:column}
+.test-quote{font-size:14px;color:var(--txt-m);line-height:1.65;margin-bottom:14px;flex:1}
+.test-author{font-size:12.5px;color:var(--txt);font-weight:600}
+.test-role{font-size:11.5px;color:var(--txt-d);margin-top:1px}
+@media(max-width:700px){.test-grid{grid-template-columns:1fr}}
 #orbit-stage{position:relative;margin:0 auto}
 #orbit-canvas-v2{position:absolute;top:0;left:0;pointer-events:none;z-index:5;display:block}
 #core-center-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background:var(--azul-dark);border:2px solid var(--dourado);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;z-index:20;transition:all .3s}
@@ -590,7 +610,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <div class="core-header reveal">
       <div class="eyebrow">Método Órbita CORE</div>
       <h2 class="sec-title">Conecte estratégia, operação e <em>experiência.</em></h2>
-      <p class="core-tagline">Toque em cada pilar da órbita para descobrir onde sua empresa está perdendo receita:</p>
+      <p class="core-tagline">A Órbita CORE representa o equilíbrio da experiência do cliente. <strong style="color:var(--txt)">Quanto maior o nível de maturidade, mais próximo o pilar está do núcleo</strong>, aumentando a estabilidade organizacional.</p>
+      <p class="core-tagline" style="margin-top:10px">O método trata de equilíbrio; uma órbita desequilibrada gera experiência inconsistente.</p>
+      <p class="core-tagline" style="margin-top:10px">Toque em cada pilar da órbita para descobrir onde sua empresa está perdendo receita:</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;" class="reveal scale-in">
       <div id="orbit-stage">
@@ -603,129 +625,33 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       </div>
       <div id="orbit-trigger"></div>
     </div>
+
+    <div class="core-grid-static reveal">
+    <div class="core-static-card" id="pilar-c" style="--hc:#028090;--hctxt:#fff">
+      <div class="core-static-letter" style="background:#028090">C</div>
+      <div class="core-static-name">Compreensão do Cliente</div>
+      <p class="core-static-desc">Voz do cliente, NPS, CSAT, jornada real, dados qualitativos e quantitativos. O que ele sente, espera e onde se frustra.</p>
+    </div>
+    <div class="core-static-card" id="pilar-o" style="--hc:#1D5FA5;--hctxt:#fff">
+      <div class="core-static-letter" style="background:#1D5FA5">O</div>
+      <div class="core-static-name">Operação e Excelência</div>
+      <p class="core-static-desc">Processos, SLAs, gargalos operacionais e falhas invisíveis da experiência. Integração entre departamentos.</p>
+    </div>
+    <div class="core-static-card" id="pilar-r" style="--hc:#1D9E75;--hctxt:#fff">
+      <div class="core-static-letter" style="background:#1D9E75">R</div>
+      <div class="core-static-name">Relacionamento e Lealdade</div>
+      <p class="core-static-desc">Fidelização, CRM, recompra, recuperação de inativos, programas de relacionamento e LTV.</p>
+    </div>
+    <div class="core-static-card" id="pilar-e" style="--hc:#C9A84C;--hctxt:#141F2B">
+      <div class="core-static-letter" style="background:#C9A84C;color:#141F2B">E</div>
+      <div class="core-static-name">Evolução da Experiência</div>
+      <p class="core-static-desc">Melhoria contínua, IA aplicada à experiência, automação e benchmarking. O futuro da experiência do seu cliente.</p>
+    </div>
   </div>
-  <div id="core-interactive">
-    <div id="core-tabs">
-      <button class="core-tab active" data-tab="pillars">
-        <span style="display:flex;gap:4px">
-          <span class="tab-dot" style="background:#028090;color:#fff;font-size:9px">C</span>
-          <span class="tab-dot" style="background:#1D5FA5;color:#fff;font-size:9px">O</span>
-          <span class="tab-dot" style="background:#1D9E75;color:#fff;font-size:9px">R</span>
-          <span class="tab-dot" style="background:#C9A84C;color:#141F2B;font-size:9px">E</span>
-        </span>
-        Os Pilares
-      </button>
-      <button class="core-tab" data-tab="maturity">Níveis de Maturidade</button>
-      <button class="core-tab" data-tab="coreinfo">
-        <span class="tab-dot" style="background:var(--dourado);color:var(--azul-dark);font-size:11px">★</span>
-        CORE Integrado
-      </button>
-    </div>
-    <div id="core-panels">
-      <!-- PILLARS -->
-      <div class="core-panel visible" id="cpanel-pillars">
-        <div class="panel-inner">
-          <div id="pillar-sel-row">
-            <button class="psel" data-key="c"><div class="psel-dot" style="background:#028090;color:#fff">C</div><span class="psel-label">Customer Understanding</span></button>
-            <button class="psel" data-key="o"><div class="psel-dot" style="background:#1D5FA5;color:#fff">O</div><span class="psel-label">Operational Excellence</span></button>
-            <button class="psel" data-key="r"><div class="psel-dot" style="background:#1D9E75;color:#fff">R</div><span class="psel-label">Relationship &amp; Loyalty</span></button>
-            <button class="psel" data-key="e"><div class="psel-dot" style="background:#C9A84C;color:#141F2B">E</div><span class="psel-label">Experience Evolution</span></button>
-          </div>
-          <p id="pillar-hint">Toque em cada letra para entender o pilar</p>
 
-          <!-- Secondary nav: mobile only — aparece logo abaixo dos quadrantes -->
-          <div id="pillars-secondary-nav" style="display:none">
-            <button class="core-tab" data-tab="maturity">Níveis de Maturidade</button>
-            <button class="core-tab" data-tab="coreinfo">
-              <span class="tab-dot" style="background:var(--dourado);color:var(--azul-dark);font-size:11px">★</span>
-              CORE Integrado
-            </button>
-          </div>
-          <div id="pillar-detail-card" style="display:none"></div>
-
-
-        </div>
-      </div>
-      <!-- MATURITY -->
-      <div class="core-panel" id="cpanel-maturity">
-        <div class="panel-inner">
-          <h3 style="font-family:var(--fm);font-size:clamp(20px,3.5vw,28px);font-weight:200;color:var(--txt);margin-bottom:14px;line-height:1.1;text-align:center">Quanto maior a maturidade, <em style="color:var(--dourado-bright)">mais próximo do cliente.</em></h3>
-          <div class="mat-intro-block"><p>A Órbita CORE representa o equilíbrio da experiência do cliente. <strong>Quanto maior o nível de maturidade, mais próximo o pilar está do núcleo</strong>, aumentando a estabilidade organizacional.</p><p>O método trata de equilíbrio; uma órbita desequilibrada gera experiência inconsistente.</p></div>
-          <div class="mat-rows">
-            <div class="mat-row"><div class="mat-num-b" style="border-color:#028090;color:#028090">5</div><div style="flex:1"><div class="mat-row-name">Liderando</div><div class="mat-row-desc">Excelência orbital plena. A organização atingiu a Experience Stability Zone.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:100%;background:#028090"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:#1D9E75;color:#1D9E75">4</div><div style="flex:1"><div class="mat-row-name">Avançado</div><div class="mat-row-desc">Alta integração entre pilares com resultados consistentes e mensuráveis.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:80%;background:#1D9E75"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:var(--dourado);color:var(--dourado)">3</div><div style="flex:1"><div class="mat-row-name">Estruturado</div><div class="mat-row-desc">Processos definidos e governança estabelecida. A base está construída.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:60%;background:var(--dourado)"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:#B07830;color:#B07830">2</div><div style="flex:1"><div class="mat-row-name">Desenvolvendo</div><div class="mat-row-desc">Primeiras iniciativas coordenadas emergindo. Consciência sem estrutura sistêmica.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:40%;background:#B07830"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:rgba(245,240,232,.25);color:rgba(245,240,232,.4)">1</div><div style="flex:1"><div class="mat-row-name">Inicial</div><div class="mat-row-desc">Práticas isoladas, sem estrutura sistêmica. Cada área atua de forma independente.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:20%;background:rgba(245,240,232,.25)"></div></div></div></div>
-          </div>
-        </div>
-      </div>
-      <!-- CORE INTEGRADO — with static orbit visual on the right -->
-      <div class="core-panel" id="cpanel-coreinfo">
-        <div class="panel-inner">
-          <div class="ci-header">
-            <div class="ci-star">★</div>
-            <div>
-              <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:4px">O Núcleo</div>
-              <div style="font-family:var(--fm);font-size:24px;font-weight:300;color:var(--txt)">CORE Integrado</div>
-            </div>
-          </div>
-          <div class="ci-layout">
-            <div class="ci-text-block">
-              <div class="ci-single-card">Sua experiência de cliente só escala com <strong>EQUILÍBRIO</strong>.<br>Se um pilar avança sozinho, o resto da operação <strong>TRAVA</strong> — e você <strong>PERDE RECEITA</strong>.</div>
-              <div class="ci-callout">O <strong>Diagnóstico Órbita CORE</strong> revela qual pilar está limitando o crescimento da sua organização hoje.</div>
-            </div>
-            <!-- Static orbit — C=West, O=North, R=East, E=South; nucleus glowing -->
-            <div class="ci-orbit-wrap">
-              <svg class="ci-orbit-svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <radialGradient id="coreGlow2" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#B89968" stop-opacity="0.6"/>
-                    <stop offset="50%" stop-color="#B89968" stop-opacity="0.18"/>
-                    <stop offset="100%" stop-color="#B89968" stop-opacity="0"/>
-                  </radialGradient>
-                </defs>
-                <!-- Glow halo -->
-                <circle cx="110" cy="110" r="38" fill="url(#coreGlow2)"/>
-                <!-- 5 orbit rings — same proportions as animated orbit -->
-                <!-- Ring 1 (outermost) -->
-                <circle cx="110" cy="110" r="100" stroke="#B89968" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.18"/>
-                <!-- Ring 2 -->
-                <circle cx="110" cy="110" r="82" stroke="#B89968" stroke-width="0.9" stroke-dasharray="4 3.5" opacity="0.25"/>
-                <!-- Ring 3 -->
-                <circle cx="110" cy="110" r="64" stroke="#B89968" stroke-width="1" stroke-dasharray="3.5 3" opacity="0.35"/>
-                <!-- Ring 4 — nodes sit here (penúltimo) -->
-                <circle cx="110" cy="110" r="46" stroke="#B89968" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
-                <!-- Ring 5 (innermost, closest to nucleus) -->
-                <circle cx="110" cy="110" r="30" stroke="#B89968" stroke-width="0.8" stroke-dasharray="2 2.5" opacity="0.3"/>
-                <!-- Nucleus — no dot inside -->
-                <circle cx="110" cy="110" r="22" fill="#141F2B" stroke="#D4B87A" stroke-width="1.8"/>
-                <circle cx="110" cy="110" r="14" fill="rgba(212,184,122,0.1)" stroke="#D4B87A" stroke-width="0.7" stroke-dasharray="2 2"/>
-                <text x="110" y="106" text-anchor="middle" font-family="Fraunces,serif" font-size="7" font-weight="600" fill="#F5F0E8" letter-spacing="1">CORE</text>
-                <text x="110" y="116" text-anchor="middle" font-family="Inter,sans-serif" font-size="4" font-weight="700" fill="#B89968" letter-spacing="0.8">INTEGRADO</text>
-                <!-- Connector lines from nucleus to nodes on ring 4 -->
-                <line x1="110" y1="88" x2="110" y2="66" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <line x1="88" y1="110" x2="66" y2="110" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <line x1="132" y1="110" x2="154" y2="110" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <line x1="110" y1="132" x2="110" y2="154" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <!-- Node C — West on ring 4 -->
-                <circle cx="64" cy="110" r="14" fill="#028090" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="64" y="114.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="white">C</text>
-                <!-- Node O — North on ring 4 -->
-                <circle cx="110" cy="64" r="14" fill="#1D5FA5" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="110" y="68.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="white">O</text>
-                <!-- Node R — East on ring 4 -->
-                <circle cx="156" cy="110" r="14" fill="#1D9E75" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="156" y="114.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="white">R</text>
-                <!-- Node E — South on ring 4 -->
-                <circle cx="110" cy="156" r="14" fill="#C9A84C" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="110" y="160.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="#141F2B">E</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="core-integrado-note reveal">
+    <strong>Método Órbita CORE é um sistema integrado.</strong> Não é possível melhorar retenção endereçando os 4 pilares isoladamente. Se um avança sozinho, o resto da operação trava, e você perde receita.
+  </div>
   </div>
 </section>
 <section class="s-why">
@@ -742,7 +668,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     </div>
   </div>
 </section>
-<section class="s-services" id="servicos">
+<section class="s-services section-light" id="servicos" style="background:var(--creme)">
   <div class="wrap">
     <div style="text-align:center;max-width:640px;margin:0 auto 44px" class="reveal">
       <div class="eyebrow">O que eu faço</div>
@@ -834,7 +760,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       </div>
       <!-- Botão carregar mais -->
       <div id="cases-load-more-btn" style="grid-column:1/-1;text-align:center;padding:8px 0 4px">
-        <button onclick="document.getElementById('cases-hidden').style.display='contents';this.parentElement.style.display='none'" style="background:none;border:1px solid rgba(184,153,104,.35);color:var(--dourado);padding:14px 36px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s;font-family:var(--fi)" onmouseover="this.style.borderColor='var(--dourado)';this.style.background='rgba(184,153,104,.06)'" onmouseout="this.style.borderColor='rgba(184,153,104,.35)';this.style.background='none'">Ver portfólio completo ↓</button>
+        <button onclick="document.getElementById('cases-hidden').style.display='block';this.parentElement.style.display='none'" style="background:none;border:1px solid rgba(184,153,104,.35);color:var(--dourado);padding:14px 36px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s;font-family:var(--fi)" onmouseover="this.style.borderColor='var(--dourado)';this.style.background='rgba(184,153,104,.06)'" onmouseout="this.style.borderColor='rgba(184,153,104,.35)';this.style.background='none'">Ver portfólio completo ↓</button>
       </div>
       <!-- Cases ocultos -->
       <div id="cases-hidden" style="display:none;grid-column:1/-1">
@@ -884,6 +810,33 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     </div>    </div>
   </div>
 </section>
+<section class="s-test section-light">
+  <div class="wrap">
+    <div class="test-head reveal">O que dizem sobre o método</div>
+    <div class="test-grid reveal">
+      <div class="test-card">
+        <p class="test-quote">"O método Órbita Core traduz a experiência do cliente em resultados concretos ao conectar estratégia, operação, relacionamento e evolução contínua de forma prática, estruturada e orientada ao negócio."</p>
+        <div class="test-author">Thabata Antunes</div>
+        <div class="test-role">Especialista em Atendimento e Experiência</div>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"Excelente approach e metodologia. A estratégia de CX na maioria das empresas ainda é muito centrada no CS, parabéns pela criação de uma visão mais ampla que permite a execução mais estruturada."</p>
+        <div class="test-author">Cleibe Palhano</div>
+        <div class="test-role">Diretor de Estratégia e Operações</div>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"Essa construção tem muito da sua essência: visão de cliente, profundidade e foco em resolver problemas reais. Uma ferramenta que torna CX mais tangível, mensurável e aplicável."</p>
+        <div class="test-author">Juliana Oliveira</div>
+        <div class="test-role">Marketing Manager B2B/B2C</div>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"Parabéns Dani, você faz diferença quando o assunto é a experiência do cliente. Sucesso nessa nova fase!"</p>
+        <div class="test-author">Marcelo Alves</div>
+        <div class="test-role">Fundador &amp; CEO, FOX América Seguros</div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="s-sobre" id="sobre">
   <div class="wrap">
     <div class="sobre-grid">
@@ -915,7 +868,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <p class="sobre-text">Construí minha bagagem resolvendo esse problema na prática:</p>
         <ul class="sobre-bullets">
           <li><strong>Grandes Corporações:</strong> Passagens por Raízen, LG e Huawei.</li>
-          <li><strong>Ecossistema de Loyalty:</strong> 10 anos liderando estratégias na Smiles, Esfera e Livelo.</li>
+          <li><strong>Loyalty de alta complexidade:</strong> 10 anos liderando estratégias na Smiles, Esfera e Livelo.</li>
         </ul>
         <p class="sobre-text">O <strong>Método Órbita CORE</strong> nasce dessa vivência real, conectando estratégia e operação para gerar retenção e crescimento que aparecem no caixa.</p>
 
@@ -946,7 +899,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     </div>
   </div>
 </section>
-<section class="s-del">
+<section class="s-del section-light" style="background:var(--creme)">
   <div class="wrap">
     <div class="reveal" style="margin-bottom:36px">
       <div class="eyebrow">Como funciona</div>
@@ -1036,7 +989,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <div>
         <div class="footer-section-label">Fale comigo</div>
         <div class="footer-contact-item"><span class="footer-contact-icon">✉</span><a href="mailto:contato@danielpalhano.com.br" class="footer-contact-text">contato@danielpalhano.com.br</a></div>
-        <div class="footer-contact-item"><span class="footer-contact-icon">↗</span><a href="https://www.linkedin.com/in/daniel-palhano-profissional" target="_blank" class="footer-contact-text">LinkedIn · Daniel Palhano</a></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">↗</span><a href="https://www.instagram.com/danielpalhano" target="_blank" class="footer-contact-text">Instagram · @danielpalhano</a></div>
         <div class="footer-wa-block">
           <div class="footer-wa-label">Agende uma conversa</div>
           <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20Daniel%21%20Gostaria%20de%20conversar%20sobre%20o%20m%C3%A9todo%20%C3%93rbita%20CORE." target="_blank" class="footer-wa-btn">Falar no WhatsApp</a>
@@ -1089,51 +1042,35 @@ function orbitFrame(ts){
   });
   rafId=requestAnimationFrame(orbitFrame);
 }
-function activatePillar(k){
-  PKS.forEach(function(key){document.getElementById("v2-node-"+key).classList.toggle("active",key===k)});
-  document.querySelectorAll(".psel").forEach(function(b){b.classList.toggle("active",b.dataset.key===k)});
-  document.getElementById("core-center-btn").classList.remove("active");
-  var p=PILLARS[k],card=document.getElementById("pillar-detail-card");
-  card.style.display="block";
-  var hint=document.getElementById("pillar-hint");if(hint)hint.style.display="none";
-  card.innerHTML=
-    '<div class="pd-header"><div class="pd-badge" style="background:'+p.color+';color:'+p.tc+'">'+k.toUpperCase()+'</div><div><div class="pd-eyebrow" style="color:'+p.color+'">'+p.label+'</div><div class="pd-name">'+p.name+'</div></div></div>'+
-    '<div class="pd-single-card" style="border-color:'+p.color+'33"><p>'+p.html+'</p></div>'+
-    '<div class="pd-question">'+p.q+'</div>';
-  switchTab("pillars");
-  setTimeout(function(){var el2=document.getElementById("core-interactive");var nh=document.querySelector(".nav").offsetHeight;window.scrollTo({top:el2.getBoundingClientRect().top+window.pageYOffset-nh-12,behavior:"smooth"})},60);
+function setPilarActive(key){
+  document.querySelectorAll(".core-static-card").forEach(function(c){c.classList.remove("active")});
+  PKS.forEach(function(k){document.getElementById("v2-node-"+k).classList.remove("node-active")});
+  if(key){
+    var card=document.getElementById("pilar-"+key);
+    var node=document.getElementById("v2-node-"+key);
+    if(card)card.classList.add("active");
+    if(node)node.classList.add("node-active");
+  }
 }
-function switchTab(n){document.querySelectorAll(".core-tab").forEach(function(b){b.classList.toggle("active",b.dataset.tab===n)});document.querySelectorAll(".core-panel").forEach(function(p){p.classList.toggle("visible",p.id==="cpanel-"+n)})}
-
-document.querySelectorAll(".core-tab").forEach(function(b){b.addEventListener("click",function(){switchTab(b.dataset.tab)})});
-// Mobile secondary nav setup
-function setupSecondaryNav(){
-  var secNav=document.getElementById("pillars-secondary-nav");
-  if(!secNav)return;
-  var isMobile=window.innerWidth<=640;
-  secNav.style.display=isMobile?"flex":"none";
-  secNav.querySelectorAll(".core-tab").forEach(function(b){
-    b.classList.remove("active");
-    b.addEventListener("click",function(){switchTab(b.dataset.tab)});
+PKS.forEach(function(k){
+  var node=document.getElementById("v2-node-"+k);
+  node.addEventListener("mouseenter",function(){setPilarActive(k)});
+  node.addEventListener("mouseleave",function(){setPilarActive(null)});
+  node.addEventListener("click",function(){
+    setPilarActive(k);
+    var card=document.getElementById("pilar-"+k);
+    if(!card)return;
+    var nav=document.querySelector(".nav");
+    var navH=nav?nav.offsetHeight:0;
+    var top=card.getBoundingClientRect().top+window.pageYOffset-navH-20;
+    window.scrollTo({top:top,behavior:"smooth"});
   });
-}
-function syncSecondaryTabs(n){
-  var secNav=document.getElementById("pillars-secondary-nav");
-  if(!secNav)return;
-  secNav.querySelectorAll(".core-tab").forEach(function(b){b.classList.toggle("active",b.dataset.tab===n)});
-}
-var origSwitchTab=switchTab;
-switchTab=function(n){origSwitchTab(n);syncSecondaryTabs(n);};
-setupSecondaryNav();
-window.addEventListener("resize",setupSecondaryNav);
-PKS.forEach(function(k){document.getElementById("v2-node-"+k).addEventListener("click",function(){activatePillar(k)})});
-document.querySelectorAll(".psel").forEach(function(b){b.addEventListener("click",function(){activatePillar(b.dataset.key)})});
-document.getElementById("core-center-btn").addEventListener("click",function(){
-  document.getElementById("core-center-btn").classList.add("active");
-  PKS.forEach(function(k){document.getElementById("v2-node-"+k).classList.remove("active")});
-  document.querySelectorAll(".psel").forEach(function(b){b.classList.remove("active")});
-  switchTab("coreinfo");
-  setTimeout(function(){var el2=document.getElementById("core-interactive");var nh=document.querySelector(".nav").offsetHeight;window.scrollTo({top:el2.getBoundingClientRect().top+window.pageYOffset-nh-12,behavior:"smooth"})},60);
+});
+document.querySelectorAll(".core-static-card").forEach(function(card){
+  var key=card.id.replace("pilar-","");
+  card.addEventListener("mouseenter",function(){setPilarActive(key)});
+  card.addEventListener("mouseleave",function(){setPilarActive(null)});
+  card.addEventListener("click",function(){setPilarActive(key)});
 });
 var tIdx=0;function rotateTrig(){var el3=document.getElementById("orbit-trigger");el3.style.opacity="0";setTimeout(function(){el3.textContent=TRIGS[tIdx++%TRIGS.length];el3.style.opacity="1"},450)}
 setTimeout(function(){rotateTrig();setInterval(rotateTrig,4600)},1800);
