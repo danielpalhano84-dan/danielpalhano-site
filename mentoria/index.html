@@ -579,17 +579,20 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .core-integrado-note strong{color:var(--txt)}
 @media(max-width:700px){.core-grid-static{grid-template-columns:1fr}}
 
-/* ===== ENCONTROS TIMELINE ===== */
+/* ===== ENCONTROS - grid de cards centralizado, cor no hover ===== */
 .s-enc{padding:90px 0}
 .enc-head{max-width:640px;margin:0 auto 50px;text-align:center}
-.enc-line{position:relative;padding-left:36px;border-left:1px solid var(--azul-border-gold)}
-.enc-item{position:relative;padding-bottom:38px}
-.enc-item:last-child{padding-bottom:0}
-.enc-dot{position:absolute;left:-43px;top:2px;width:15px;height:15px;border-radius:50%;background:var(--azul-dark);border:2px solid var(--dourado)}
-.enc-num{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);margin-bottom:6px}
-.enc-title{font-family:var(--fm);font-size:20px;font-weight:300;color:var(--txt);margin-bottom:8px}
-.enc-desc{font-size:14.5px;color:var(--txt-m);line-height:1.65;max-width:560px}
-.enc-deliv{display:inline-block;margin-top:10px;font-size:12px;color:var(--dourado-bright);background:var(--azul-card);padding:5px 12px;border-radius:5px;letter-spacing:.02em}
+.enc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto}
+.enc-card{background:#FFFFFF;border:1px solid var(--azul-border);border-radius:var(--radius);padding:26px 22px;text-align:center;transition:.3s var(--ease);cursor:default}
+.enc-card:hover{background:var(--hc);border-color:var(--hc)}
+.enc-num{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);margin-bottom:8px;transition:.3s var(--ease)}
+.enc-title{font-family:var(--fm);font-size:18px;font-weight:400;color:var(--txt);margin-bottom:10px;line-height:1.25;transition:.3s var(--ease)}
+.enc-desc{font-size:13.5px;color:var(--txt-m);line-height:1.6;transition:.3s var(--ease)}
+.enc-deliv{display:inline-block;margin-top:14px;font-size:11.5px;color:var(--dourado-bright);background:var(--azul-card);padding:5px 12px;border-radius:5px;letter-spacing:.02em;transition:.3s var(--ease)}
+.enc-card:hover .enc-num,.enc-card:hover .enc-title,.enc-card:hover .enc-desc{color:var(--hctxt)}
+.enc-card:hover .enc-deliv{background:rgba(255,255,255,.25);color:var(--hctxt)}
+@media(max-width:860px){.enc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.enc-grid{grid-template-columns:1fr}}
 
 /* ===== ENTREGAVEIS ===== */
 .s-deliv2{padding:90px 0}
@@ -634,7 +637,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .ofer-head{max-width:640px;margin:0 auto 44px;text-align:center}
 .ofer-note{font-size:13px;color:var(--txt-d);max-width:560px;margin:10px auto 0;line-height:1.6;text-align:center}
 .ofer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch}
-.ofer-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:26px 20px;display:flex;flex-direction:column}
+.ofer-grid-3{grid-template-columns:repeat(3,1fr)}
+.ofer-card{background:#FFFFFF;border:1px solid var(--azul-border);border-radius:10px;padding:28px 24px;display:flex;flex-direction:column}
 .ofer-card.featured{
   background:var(--azul-dark);
   border:2px solid var(--dourado);
@@ -647,10 +651,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   --azul-border:rgba(245,240,232,.14);
   transform:translateY(-6px);
 }
-.ofer-badge{position:absolute;top:-12px;left:20px;background:var(--dourado);color:#141F2B;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
-.ofer-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dourado);margin-bottom:6px}
-.ofer-name{font-family:var(--fm);font-size:19px;font-weight:300;color:var(--txt);margin-bottom:10px;line-height:1.2}
-.ofer-pitch{font-size:13px;color:var(--txt-m);line-height:1.55;min-height:60px;margin-bottom:14px}
+.ofer-badge{position:absolute;top:-12px;left:24px;background:var(--dourado);color:#141F2B;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
+.ofer-name{font-family:var(--fm);font-size:19px;font-weight:400;color:var(--txt);margin-bottom:8px;line-height:1.25}
+.ofer-subtitle{font-size:12.5px;color:var(--dourado);letter-spacing:.02em;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--azul-border)}
 .ofer-list{list-style:none;padding:0;margin:0 0 18px;flex:1}
 .ofer-list li{font-size:12.5px;color:var(--txt-m);line-height:1.55;padding-left:14px;position:relative;margin-bottom:7px}
 .ofer-list li::before{content:'·';position:absolute;left:0;color:var(--dourado)}
@@ -664,6 +667,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .ofer-card.featured .ofer-btn:hover{background:var(--dourado-bright)}
 @media(max-width:980px){.ofer-grid{grid-template-columns:repeat(2,1fr)}.ofer-card.featured{transform:none}}
 @media(max-width:600px){.ofer-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.ofer-grid-3{grid-template-columns:1fr}.ofer-grid-3 .ofer-card.featured{transform:none}}
 .ofer-pay-note{text-align:center;font-size:12.5px;color:var(--txt-d);margin-top:30px}
 
 /* ===== CTA FINAL MENTORIA ===== */
@@ -817,44 +821,38 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <h2 class="sec-title">Cada encontro, <em>uma mudança real.</em></h2>
       <p class="sec-sub" style="margin-top:12px">Sem teoria solta. Cada encontro tem objetivo claro, exercício prático e um entregável concreto que fica com a sua empresa.</p>
     </div>
-    <div class="enc-line reveal">
-      <div class="enc-item">
-        <div class="enc-dot"></div>
+    <div class="enc-grid reveal">
+      <div class="enc-card" style="--hc:#B89968;--hctxt:#141F2B">
         <div class="enc-num">Encontro 01</div>
         <div class="enc-title">Diagnóstico Órbita CORE™</div>
         <p class="enc-desc">Consciência real sobre o nível de maturidade da empresa nos 4 pilares. Como empresas perdem clientes sem perceber — e onde a sua está nesse espectro.</p>
         <span class="enc-deliv">Radar Órbita CORE™</span>
       </div>
-      <div class="enc-item">
-        <div class="enc-dot"></div>
+      <div class="enc-card" style="--hc:#028090;--hctxt:#fff">
         <div class="enc-num">Encontro 02</div>
         <div class="enc-title">Compreensão do Cliente</div>
         <p class="enc-desc">Voz do Cliente, pesquisa de satisfação, NPS, CSAT, jornada do cliente e comportamento do comprador. O que o cliente sente, espera e onde se frustra.</p>
         <span class="enc-deliv">Mapa da Jornada</span>
       </div>
-      <div class="enc-item">
-        <div class="enc-dot"></div>
+      <div class="enc-card" style="--hc:#1D5FA5;--hctxt:#fff">
         <div class="enc-num">Encontro 03</div>
         <div class="enc-title">Operação e Excelência</div>
         <p class="enc-desc">Converter informações em melhorias concretas. Processos, fluxos, padronização, gargalos operacionais e falhas invisíveis da experiência.</p>
         <span class="enc-deliv">Matriz de Priorização</span>
       </div>
-      <div class="enc-item">
-        <div class="enc-dot"></div>
+      <div class="enc-card" style="--hc:#1D9E75;--hctxt:#fff">
         <div class="enc-num">Encontro 04</div>
         <div class="enc-title">Relacionamento e Lealdade</div>
         <p class="enc-desc">Criar recorrência e retenção real. Fidelização, CRM, programas de relacionamento, recompra e recuperação de clientes inativos.</p>
         <span class="enc-deliv">Plano de Retenção 90d</span>
       </div>
-      <div class="enc-item">
-        <div class="enc-dot"></div>
+      <div class="enc-card" style="--hc:#C9A84C;--hctxt:#141F2B">
         <div class="enc-num">Encontro 05</div>
         <div class="enc-title">Evolução da Experiência</div>
         <p class="enc-desc">Melhoria contínua com inteligência. IA aplicada à experiência, automação dos pontos estratégicos e benchmarking de mercado.</p>
         <span class="enc-deliv">Plano de Evolução</span>
       </div>
-      <div class="enc-item">
-        <div class="enc-dot"></div>
+      <div class="enc-card" style="--hc:#B89968;--hctxt:#141F2B">
         <div class="enc-num">Encontro 06</div>
         <div class="enc-title">Governança da Experiência</div>
         <p class="enc-desc">Garantir continuidade real. Fóruns de experiência, reuniões com cadência, indicadores que importam e cultura de serviço. Cliente no centro como disciplina permanente.</p>
@@ -863,7 +861,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     </div>
   </div>
 </section>
-
 <section class="s-deliv2">
   <div class="wrap">
     <div class="dlv-head reveal">
@@ -1022,18 +1019,17 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <div class="ofer-head reveal">
       <div class="eyebrow">Investimento</div>
       <h2 class="sec-title">Qual formato faz sentido <em>pra sua operação.</em></h2>
-      <p class="ofer-note">Formatos desenhados para diferentes estágios e necessidades. Pagamento via Pix, cartão ou boleto.</p>
+      <p class="ofer-note">Pagamento via Pix, cartão ou boleto.</p>
     </div>
-    <div class="ofer-grid reveal">
+    <div class="ofer-grid ofer-grid-3 reveal">
       <div class="ofer-card">
-        <div class="ofer-tag">Basic</div>
-        <div class="ofer-name">Diagnóstico + plano inicial</div>
-        <p class="ofer-pitch">Pra quem precisa entender com clareza onde a operação está perdendo cliente — e já sair com o que fazer sobre isso.</p>
+        <div class="ofer-name">Mentoria Órbita CORE Basic</div>
+        <div class="ofer-subtitle">Mentoria em grupo · 3 encontros ao vivo</div>
         <ul class="ofer-list">
+          <li>3 sessões ao vivo de 90 min com Daniel Palhano</li>
+          <li>5 entregáveis personalizados para a sua operação</li>
           <li>Diagnóstico completo dos 4 pilares CORE</li>
-          <li>Plano de ação inicial pro ponto mais crítico</li>
-          <li>3 encontros ao vivo de 90 min · 3 meses de acompanhamento</li>
-          <li>Material e templates pra aplicar sozinho</li>
+          <li>Material e templates de todos os encontros</li>
         </ul>
         <div class="ofer-price-wrap">
           <div class="ofer-price">R$ 4.800</div>
@@ -1041,53 +1037,43 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
           <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
         </div>
       </div>
+
       <div class="ofer-card featured">
         <span class="ofer-badge">Mais escolhido</span>
-        <div class="ofer-tag">Mentoria em Grupo</div>
-        <div class="ofer-name">Operação estruturada nos 4 pilares</div>
-        <p class="ofer-pitch">Pra quem quer sair do diagnóstico com a operação estruturada — com troca real entre empresas no caminho.</p>
+        <div class="ofer-name">Mentoria Órbita CORE Completa</div>
+        <div class="ofer-subtitle">Mentoria em grupo · 6 encontros ao vivo</div>
         <ul class="ofer-list">
-          <li>6 encontros ao vivo · 6 meses de acompanhamento</li>
-          <li>Turma de até 10 empresas</li>
-          <li>10 entregáveis aplicados à sua realidade</li>
-          <li>Diagnóstico + plano de ação + retenção 90 dias</li>
+          <li>6 sessões ao vivo de 90 min com Daniel Palhano</li>
+          <li>10 entregáveis personalizados para a sua operação</li>
+          <li>Diagnóstico completo dos 4 pilares CORE</li>
+          <li>Material e templates de todos os encontros</li>
+          <li>Acesso ao grupo exclusivo da turma</li>
+          <li>Suporte via WhatsApp durante todo o programa</li>
+          <li>6 meses de acompanhamento</li>
         </ul>
         <div class="ofer-price-wrap">
           <div class="ofer-price">R$ 6.900</div>
           <div class="ofer-inst">ou 12x de 575</div>
-          <div class="ofer-anchor">Menos do que a maioria perde em 2-3 meses com clientes que não voltam.</div>
           <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
         </div>
       </div>
+
       <div class="ofer-card">
-        <div class="ofer-tag">Acelera Órbita™ · Individual</div>
-        <div class="ofer-name">Execução acompanhada de perto</div>
-        <p class="ofer-pitch">Pra quem já sabe o que fazer e quer execução acompanhada, sem esperar a próxima turma.</p>
+        <div class="ofer-name">Acelera Órbita™ · Individual</div>
+        <div class="ofer-subtitle">Mentoria individual e personalizada</div>
         <ul class="ofer-list">
-          <li>Diagnóstico + estruturação + execução</li>
-          <li>8 encontros individuais, 1 por semana</li>
+          <li>8 sessões ao vivo de 90 min com Daniel Palhano</li>
+          <li>10 entregáveis personalizados para a sua operação</li>
+          <li>Diagnóstico completo dos 4 pilares CORE, estruturação e execução</li>
           <li>Revisão de indicadores em tempo real</li>
-          <li>6 meses de acompanhamento individual</li>
+          <li>Implantação de melhorias simultaneamente ao programa</li>
+          <li>Material e templates de todos os encontros</li>
+          <li>Suporte via WhatsApp durante todo o programa</li>
+          <li>6 meses de acompanhamento</li>
         </ul>
         <div class="ofer-price-wrap">
           <div class="ofer-price">R$ 15.000</div>
           <div class="ofer-inst">ou 12x de 1.250</div>
-          <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
-        </div>
-      </div>
-      <div class="ofer-card">
-        <div class="ofer-tag">Implantação · Individual</div>
-        <div class="ofer-name">Centralidade como parte da operação</div>
-        <p class="ofer-pitch">Pra quem quer a centralidade no cliente virando parte permanente de como a empresa opera.</p>
-        <ul class="ofer-list">
-          <li>Diagnóstico, estruturação, execução e evolução contínua</li>
-          <li>Governança de CX e comitê de centralidade</li>
-          <li>3 meses de imersão direto na operação</li>
-          <li>Trabalho com a equipe, dentro da empresa</li>
-        </ul>
-        <div class="ofer-price-wrap">
-          <div class="ofer-price">R$ 30.000</div>
-          <div class="ofer-inst">ou 12x de 2.500</div>
           <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
         </div>
       </div>
