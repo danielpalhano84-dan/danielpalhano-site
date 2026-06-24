@@ -328,7 +328,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .proj-cta svg{transition:transform .25s}
 .proj-card.open .proj-cta svg{transform:rotate(180deg)}
 .s-sobre{background:var(--azul);padding:100px 0}
-.sobre-grid{display:grid;grid-template-columns:360px 1fr;gap:56px;align-items:start}
+.sobre-grid{display:grid;grid-template-columns:420px 1fr;gap:56px;align-items:start}
 .sobre-photo-wrap{position:sticky;top:100px}
 .sobre-photo-img{width:100%;border-radius:12px;display:block;object-fit:cover;filter:drop-shadow(0 18px 40px rgba(0,0,0,.65))}
 .sobre-name{font-family:var(--fm);font-size:clamp(28px,3.8vw,48px);font-weight:200;color:var(--txt);line-height:1;margin-bottom:16px;white-space:nowrap}
@@ -412,7 +412,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   .hero-photo-side{min-height:70vw;max-height:500px}
   .hero-copy-side{padding:48px 40px}
   .sobre-grid{grid-template-columns:1fr}
-  .sobre-photo-img{max-width:320px;margin:0 auto;display:block}
+  .sobre-photo-img{max-width:380px;margin:0 auto;display:block}
   .sobre-photo-wrap{position:static;text-align:center}
   .why-grid,.srv-full-body{grid-template-columns:1fr}
   .ev-grid{grid-template-columns:repeat(3,1fr)}
@@ -508,7 +508,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* MOBILE — foto menor para título aparecer mais rápido */
 @media(max-width:640px){
-  .sobre-photo-img{max-height:340px;object-fit:cover;object-position:center top;border-radius:10px}
+  .sobre-photo-img{max-height:400px;object-fit:cover;object-position:center top;border-radius:10px}
   .sobre-badges{gap:8px;margin:16px 0 22px}
   .sobre-badge{padding:10px 14px}
   .sobre-badge-num{font-size:22px;min-width:40px}
@@ -587,13 +587,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .enc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto;align-items:stretch}
 .enc-card{background:#FFFFFF;border:1px solid var(--azul-border);border-radius:var(--radius);padding:26px 22px;text-align:center;transition:.3s var(--ease);cursor:default;display:flex;flex-direction:column}
 .enc-desc{flex:1}
-.enc-card:hover{background:var(--hc);border-color:var(--hc)}
+.enc-card:hover,.enc-card.active{background:var(--hc);border-color:var(--hc)}
 .enc-num{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);margin-bottom:8px;transition:.3s var(--ease)}
 .enc-title{font-family:var(--fm);font-size:18px;font-weight:400;color:var(--txt);margin-bottom:10px;line-height:1.25;transition:.3s var(--ease)}
 .enc-desc{font-size:13.5px;color:var(--txt-m);line-height:1.6;transition:.3s var(--ease)}
 .enc-deliv{display:inline-block;margin-top:14px;font-size:11.5px;color:var(--dourado-bright);background:var(--azul-card);padding:5px 12px;border-radius:5px;letter-spacing:.02em;transition:.3s var(--ease)}
-.enc-card:hover .enc-num,.enc-card:hover .enc-title,.enc-card:hover .enc-desc{color:var(--hctxt)}
-.enc-card:hover .enc-deliv{background:rgba(255,255,255,.25);color:var(--hctxt)}
+.enc-card:hover .enc-num,.enc-card:hover .enc-title,.enc-card:hover .enc-desc,.enc-card.active .enc-num,.enc-card.active .enc-title,.enc-card.active .enc-desc{color:var(--hctxt)}
+.enc-card:hover .enc-deliv,.enc-card.active .enc-deliv{background:rgba(255,255,255,.25);color:var(--hctxt)}
 @media(max-width:860px){.enc-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.enc-grid{grid-template-columns:1fr}}
 
@@ -602,8 +602,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .dlv-head{max-width:640px;margin:0 auto 44px;text-align:center}
 .dlv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .dlv-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:18px 20px;transition:.3s var(--ease)}
-.dlv-card:hover{background:var(--dourado);border-color:var(--dourado)}
-.dlv-card:hover .dlv-numb,.dlv-card:hover .dlv-name,.dlv-card:hover .dlv-desc{color:#141F2B}
+.dlv-card:hover,.dlv-card.active{background:var(--dourado);border-color:var(--dourado)}
+.dlv-card:hover .dlv-numb,.dlv-card:hover .dlv-name,.dlv-card:hover .dlv-desc,.dlv-card.active .dlv-numb,.dlv-card.active .dlv-name,.dlv-card.active .dlv-desc{color:#141F2B}
 .dlv-top{display:flex;align-items:center;gap:12px}
 .dlv-numb{font-family:var(--fm);font-size:14px;color:var(--dourado);min-width:24px;transition:.3s var(--ease)}
 .dlv-name{font-size:14.5px;color:var(--txt);font-weight:500;flex:1;transition:.3s var(--ease)}
@@ -742,7 +742,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section class="s-mhero">
   <div class="wrap">
     <div class="mhero-eyebrow reveal">Mentoria em Grupo · Método Órbita CORE™</div>
-    <h1 class="mhero-title reveal">Você está perdendo dinheiro com clientes que já confiaram em você, e provavelmente nem está vendo isso.</h1>
+    <h1 class="mhero-title reveal"><em>Aumente até 22%</em> do faturamento da sua empresa sem tráfego pago, trabalhando na <em>fidelização de seus clientes.</em></h1>
     <p class="mhero-sub reveal">Enquanto sua empresa gasta para atrair clientes novos, parte dos que já compraram de você está saindo em silêncio. Sem reclamar. Sem avisar.</p>
     <div class="mhero-meta reveal">
       <div class="mhero-meta-item"><strong>6</strong>Semanas</div>
@@ -993,7 +993,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <p class="sobre-text">Construí minha bagagem resolvendo esse problema na prática:</p>
         <ul class="sobre-bullets">
           <li>Grandes Corporações: Passagens por Raízen, LG e Huawei.</li>
-          <li><strong>Loyalty de alta complexidade:</strong> 10 anos liderando estratégias na Smiles, Esfera e Livelo.</li>
+          <li>Loyalty de alta complexidade: 10 anos liderando estratégias na Smiles, Esfera e Livelo.</li>
         </ul>
         <p class="sobre-text">O <strong>Método Órbita CORE</strong> nasce dessa vivência real, conectando estratégia e operação para gerar retenção e crescimento que aparecem no caixa.</p>
 
@@ -1226,8 +1226,10 @@ document.querySelectorAll('.core-static-card').forEach(function(card){
   var key = card.id.replace('pilar-','');
   card.addEventListener('mouseenter', function(){ setPilarActive(key); });
   card.addEventListener('mouseleave', function(){ setPilarActive(null); });
+  card.addEventListener('click', function(){ setPilarActive(key); });
 });
 </script>
+
 
 
 
@@ -1268,5 +1270,12 @@ document.querySelectorAll('.core-static-card').forEach(function(card){
     obs.observe(agitaSection);
   }
 })();
+
+// Toque/clique nos cards de Entregáveis e Encontros - já que touch não tem hover real
+document.querySelectorAll('.dlv-card, .enc-card').forEach(function(card){
+  card.addEventListener('click', function(){
+    card.classList.toggle('active');
+  });
+});
 </script>
 </html>
