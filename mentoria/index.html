@@ -552,8 +552,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .mhero-note{font-size:13px;color:var(--txt-d);margin-top:18px}
 
 /* ===== BTNS ===== */
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--dourado);color:var(--azul-dark);font-weight:600;font-size:14px;padding:15px 26px;border-radius:var(--radius);text-decoration:none;transition:.25s var(--ease)}
-.btn-primary:hover{background:var(--dourado-bright);transform:translateY(-1px)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:#B89968;color:#141F2B;font-weight:600;font-size:14px;padding:15px 26px;border-radius:8px;text-decoration:none;transition:.25s ease}
+.btn-primary:hover{background:#D4B87A;transform:translateY(-1px)}
 .btn-ghost{display:inline-flex;align-items:center;gap:6px;color:var(--txt-m);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(245,240,232,.25);padding-bottom:2px;transition:.2s}
 .btn-ghost:hover{color:var(--txt);border-color:var(--dourado)}
 
@@ -656,19 +656,18 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   --azul-border:rgba(30,42,58,.12);
 }
 .ofer-card.featured{
-  background:linear-gradient(150deg,#E2C892,#B89968);
-  border:2px solid #8A6B3A;
+  background:#1E2A3A;
+  border:2px solid #B89968;
   position:relative;
-  --txt:#241B0C;
-  --txt-m:rgba(36,27,12,.78);
-  --txt-d:rgba(36,27,12,.55);
-  --dourado:#5C431F;
-  --dourado-bright:#3E2D14;
-  --azul-border:rgba(36,27,12,.18);
-  transform:translateY(-6px);
+  --txt:#F5F0E8;
+  --txt-m:rgba(245,240,232,.74);
+  --txt-d:rgba(245,240,232,.45);
+  --dourado:#D4B87A;
+  --dourado-bright:#E8CC93;
+  --azul-border:rgba(245,240,232,.14);
 }
-.ofer-card.featured .ofer-btn{background:#241B0C;color:#E2C892;border-color:#241B0C}
-.ofer-card.featured .ofer-btn:hover{background:#3E2D14}
+.ofer-card.featured .ofer-btn{background:#B89968;color:#141F2B;border-color:#B89968}
+.ofer-card.featured .ofer-btn:hover{background:#D4B87A}
 .ofer-badge{position:absolute;top:-12px;left:24px;background:var(--dourado);color:#141F2B;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
 .ofer-name{font-family:var(--fm);font-size:19px;font-weight:400;color:var(--txt);margin-bottom:8px;line-height:1.25}
 .ofer-subtitle{font-size:12.5px;color:var(--dourado);letter-spacing:.02em;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--azul-border)}
@@ -697,6 +696,13 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .edu-simple-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:4px 0 0;padding:0}
 .edu-simple-list li{font-size:14.5px;color:var(--txt-m);line-height:1.5;padding-left:16px;position:relative}
 .edu-simple-list li::before{content:'·';position:absolute;left:0;color:var(--dourado);font-size:18px;line-height:1.3}
+</style>
+<style>
+.sobre-companies{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.sobre-companies span{font-size:11.5px;letter-spacing:.03em;color:var(--dourado-bright);border:1px solid var(--azul-border-gold);border-radius:5px;padding:6px 12px}
+</style>
+<style>
+.orb-node-v2.node-active{box-shadow:0 0 0 5px rgba(255,255,255,.35);transform:scale(1.12)}
 </style>
 </head>
 <body>
@@ -986,10 +992,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <p class="sobre-text">Em mais de 20 anos de mercado, vi grandes empresas perderem clientes não por falta de esforço, mas por falta de estrutura na experiência.</p>
         <p class="sobre-text">Construí minha bagagem resolvendo esse problema na prática:</p>
         <ul class="sobre-bullets">
-          <li><strong>Grandes Corporações:</strong> Passagens por Raízen, LG e Huawei.</li>
+          <li>Grandes Corporações: Passagens por Raízen, LG e Huawei.</li>
           <li><strong>Loyalty de alta complexidade:</strong> 10 anos liderando estratégias na Smiles, Esfera e Livelo.</li>
         </ul>
         <p class="sobre-text">O <strong>Método Órbita CORE</strong> nasce dessa vivência real, conectando estratégia e operação para gerar retenção e crescimento que aparecem no caixa.</p>
+
+        <div class="sobre-companies">
+          <span>GOL Smiles</span><span>Esfera</span><span>Livelo</span><span>LG</span><span>Huawei</span><span>Raízen</span>
+        </div>
 
         <div class="edu-inline-label">Formação</div>
         <ul class="edu-simple-list">
@@ -997,8 +1007,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
           <li>MBA em Gestão Estratégica de Negócios</li>
           <li>Pós-graduação em Direito do Consumidor e Neurociência</li>
         </ul>
-        </ul>
-      </div>      </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1186,22 +1195,40 @@ var tIdx=0;function rotateTrig(){var el3=document.getElementById("orbit-trigger"
 setTimeout(function(){rotateTrig();setInterval(rotateTrig,4600)},1800);
 function init(){buildOrbit();rafId=requestAnimationFrame(orbitFrame);window.addEventListener("resize",function(){cancelAnimationFrame(rafId);trails={c:[],o:[],r:[],e:[]};baseT=null;buildOrbit();rafId=requestAnimationFrame(orbitFrame)})}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}
-// Clique nos nós da órbita: rola até o quadrante correspondente e destaca a cor
+// Interatividade da órbita: hover ou clique em qualquer letra OU quadrante muda a cor,
+// e nunca fica travado - sempre reflete a última letra/quadrante interagido
+function setPilarActive(key){
+  document.querySelectorAll('.core-static-card').forEach(function(c){ c.classList.remove('active'); });
+  document.querySelectorAll('.orb-node-v2').forEach(function(n){ n.classList.remove('node-active'); });
+  if(key){
+    var card = document.getElementById('pilar-' + key);
+    var node = document.getElementById('v2-node-' + key);
+    if(card) card.classList.add('active');
+    if(node) node.classList.add('node-active');
+  }
+}
 document.querySelectorAll('.orb-node-v2').forEach(function(node){
   node.style.cursor = 'pointer';
+  var key = node.getAttribute('data-key');
+  node.addEventListener('mouseenter', function(){ setPilarActive(key); });
+  node.addEventListener('mouseleave', function(){ setPilarActive(null); });
   node.addEventListener('click', function(){
-    var key = node.getAttribute('data-key');
+    setPilarActive(key);
     var card = document.getElementById('pilar-' + key);
     if(!card) return;
-    document.querySelectorAll('.core-static-card').forEach(function(c){ c.classList.remove('active'); });
-    card.classList.add('active');
     var nav = document.querySelector('.nav');
     var navH = nav ? nav.offsetHeight : 0;
     var top = card.getBoundingClientRect().top + window.pageYOffset - navH - 20;
     window.scrollTo({top: top, behavior: 'smooth'});
   });
 });
+document.querySelectorAll('.core-static-card').forEach(function(card){
+  var key = card.id.replace('pilar-','');
+  card.addEventListener('mouseenter', function(){ setPilarActive(key); });
+  card.addEventListener('mouseleave', function(){ setPilarActive(null); });
+});
 </script>
+
 
 
 <script>
