@@ -522,6 +522,21 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .sobre-bullets strong{color:var(--txt)}
 </style>
 <style>
+/* ===== SECOES CLARAS/ESCURAS ALTERNADAS ===== */
+.section-dark{background:var(--azul-dark)}
+.section-light{
+  background:var(--creme);
+  --txt:#1E2A3A;
+  --txt-m:rgba(30,42,58,.7);
+  --txt-d:rgba(30,42,58,.45);
+  --azul-card:rgba(30,42,58,.035);
+  --azul-border:rgba(30,42,58,.12);
+  --azul-border-gold:rgba(138,107,58,.4);
+  --dourado:#8A6B3A;
+  --dourado-bright:#6B5024;
+}
+.section-light .enc-dot{background:var(--creme)}
+
 /* ===== HERO MENTORIA ===== */
 .s-mhero{padding:140px 0 80px;position:relative;overflow:hidden}
 .s-mhero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;border:1px solid rgba(184,153,104,.12);pointer-events:none}
@@ -536,39 +551,48 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .mhero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
 .mhero-note{font-size:13px;color:var(--txt-d);margin-top:18px}
 
-/* ===== BTNS (fallback if not present) ===== */
+/* ===== BTNS ===== */
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--dourado);color:var(--azul-dark);font-weight:600;font-size:14px;padding:15px 26px;border-radius:var(--radius);text-decoration:none;transition:.25s var(--ease)}
 .btn-primary:hover{background:var(--dourado-bright);transform:translateY(-1px)}
 .btn-ghost{display:inline-flex;align-items:center;gap:6px;color:var(--txt-m);font-size:14px;text-decoration:none;border-bottom:1px solid rgba(245,240,232,.25);padding-bottom:2px;transition:.2s}
 .btn-ghost:hover{color:var(--txt);border-color:var(--dourado)}
 
 /* ===== AGITACAO ===== */
-.s-agita{padding:70px 0;background:var(--azul-dark)}
+.s-agita{padding:70px 0}
 .agita-head{max-width:640px;margin-bottom:40px}
-.agita-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(245,240,232,.08);border-radius:var(--radius);overflow:hidden}
-.agita-card{background:var(--azul-dark);padding:30px 22px;text-align:center}
+.agita-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--azul-border);border-radius:var(--radius);overflow:hidden}
+.agita-card{background:var(--creme);padding:30px 22px;text-align:center}
 .agita-num{font-family:var(--fm);font-size:clamp(32px,4vw,44px);font-weight:300;color:var(--dourado-bright);line-height:1}
-.agita-num .agita-suffix{font-size:.6em}
 .agita-desc{font-size:13px;color:var(--txt-m);line-height:1.5;margin-top:10px}
 .agita-src{font-size:10px;color:var(--txt-d);margin-top:8px;letter-spacing:.04em}
 .agita-closer{margin-top:34px;font-family:var(--fm);font-size:clamp(18px,2.4vw,24px);font-weight:200;color:var(--txt);line-height:1.4;max-width:680px}
 .agita-closer em{color:var(--dourado-bright);font-style:italic}
 @media(max-width:760px){.agita-grid{grid-template-columns:repeat(2,1fr)}}
 
+/* ===== METODO - grid estatico ===== */
+.core-grid-static{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px;max-width:880px;margin-left:auto;margin-right:auto}
+.core-static-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:24px}
+.core-static-letter{width:38px;height:38px;line-height:38px;border-radius:50%;text-align:center;font-family:var(--fm);font-size:17px;color:#fff;margin-bottom:14px}
+.core-static-name{font-family:var(--fm);font-size:18px;font-weight:300;color:var(--txt);margin-bottom:8px}
+.core-static-desc{font-size:13.5px;color:var(--txt-m);line-height:1.6}
+.core-integrado-note{max-width:680px;margin:34px auto 0;text-align:center;font-size:14px;color:var(--txt-m);line-height:1.65}
+.core-integrado-note strong{color:var(--txt)}
+@media(max-width:700px){.core-grid-static{grid-template-columns:1fr}}
+
 /* ===== ENCONTROS TIMELINE ===== */
 .s-enc{padding:90px 0}
 .enc-head{max-width:640px;margin-bottom:50px}
-.enc-line{position:relative;padding-left:36px;border-left:1px solid rgba(184,153,104,.22)}
+.enc-line{position:relative;padding-left:36px;border-left:1px solid var(--azul-border-gold)}
 .enc-item{position:relative;padding-bottom:38px}
 .enc-item:last-child{padding-bottom:0}
 .enc-dot{position:absolute;left:-43px;top:2px;width:15px;height:15px;border-radius:50%;background:var(--azul-dark);border:2px solid var(--dourado)}
 .enc-num{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);margin-bottom:6px}
 .enc-title{font-family:var(--fm);font-size:20px;font-weight:300;color:var(--txt);margin-bottom:8px}
 .enc-desc{font-size:14.5px;color:var(--txt-m);line-height:1.65;max-width:560px}
-.enc-deliv{display:inline-block;margin-top:10px;font-size:12px;color:var(--dourado-bright);background:rgba(184,153,104,.1);padding:5px 12px;border-radius:5px;letter-spacing:.02em}
+.enc-deliv{display:inline-block;margin-top:10px;font-size:12px;color:var(--dourado-bright);background:var(--azul-card);padding:5px 12px;border-radius:5px;letter-spacing:.02em}
 
 /* ===== ENTREGAVEIS ===== */
-.s-deliv2{padding:90px 0;background:var(--azul-dark)}
+.s-deliv2{padding:90px 0}
 .dlv-head{max-width:640px;margin-bottom:44px}
 .dlv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .dlv-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:18px 20px;cursor:pointer;transition:.25s var(--ease)}
@@ -582,24 +606,24 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .dlv-card.open .dlv-desc{max-height:120px;opacity:1;margin-top:10px}
 @media(max-width:700px){.dlv-grid{grid-template-columns:1fr}}
 
-/* ===== ANTES/DEPOIS ===== */
+/* ===== ANTES/DEPOIS - duas colunas sempre abertas ===== */
 .s-ad{padding:90px 0}
 .ad-head{max-width:640px;margin:0 auto 36px;text-align:center}
-.ad-toggle{display:flex;justify-content:center;gap:6px;margin-bottom:30px}
-.ad-tab{font-size:13px;font-weight:600;letter-spacing:.04em;padding:11px 26px;border-radius:30px;border:1px solid var(--azul-border);background:transparent;color:var(--txt-m);cursor:pointer;transition:.25s}
-.ad-tab.active{background:var(--dourado);color:var(--azul-dark);border-color:var(--dourado)}
-.ad-panel{display:none;max-width:600px;margin:0 auto}
-.ad-panel.active{display:block;animation:fadeUp .35s var(--ease)}
-.ad-row{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid var(--azul-border)}
-.ad-row:last-child{border-bottom:none}
+.ad-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto}
+.ad-col{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:26px 24px}
+.ad-col-title{font-family:var(--fm);font-size:16px;font-weight:500;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--azul-border)}
+.ad-col.is-before .ad-col-title{color:#9A6B5A}
+.ad-col.is-after .ad-col-title{color:#1D9E75}
+.ad-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0}
 .ad-icon{font-size:14px;margin-top:2px;flex-shrink:0}
-.ad-row.is-before .ad-icon{color:#9A6B5A}
-.ad-row.is-after .ad-icon{color:#1D9E75}
-.ad-text{font-size:15px;color:var(--txt-m);line-height:1.5}
+.ad-col.is-before .ad-icon{color:#9A6B5A}
+.ad-col.is-after .ad-icon{color:#1D9E75}
+.ad-text{font-size:14px;color:var(--txt-m);line-height:1.5}
+@media(max-width:700px){.ad-cols{grid-template-columns:1fr}}
 
 /* ===== DEPOIMENTOS ===== */
-.s-test{padding:0 0 60px}
-.test-head{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin:50px 0 18px}
+.s-test{padding:70px 0}
+.test-head{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:18px}
 .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .test-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:20px 22px}
 .test-quote{font-size:14px;color:var(--txt-m);line-height:1.65;margin-bottom:14px}
@@ -608,13 +632,24 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 @media(max-width:700px){.test-grid{grid-template-columns:1fr}}
 
 /* ===== OFERTA ===== */
-.s-ofer{padding:90px 0;background:var(--azul-dark)}
+.s-ofer{padding:90px 0}
 .ofer-head{max-width:640px;margin-bottom:44px}
 .ofer-note{font-size:13px;color:var(--txt-d);max-width:560px;margin-top:10px;line-height:1.6}
-.ofer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ofer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch}
 .ofer-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:26px 20px;display:flex;flex-direction:column}
-.ofer-card.featured{border-color:var(--dourado);position:relative}
-.ofer-badge{position:absolute;top:-11px;left:20px;background:var(--dourado);color:var(--azul-dark);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:4px}
+.ofer-card.featured{
+  background:var(--azul-dark);
+  border:2px solid var(--dourado);
+  position:relative;
+  --txt:#F5F0E8;
+  --txt-m:rgba(245,240,232,.74);
+  --txt-d:rgba(245,240,232,.45);
+  --dourado:#D4B87A;
+  --dourado-bright:#E8CC93;
+  --azul-border:rgba(245,240,232,.14);
+  transform:translateY(-6px);
+}
+.ofer-badge{position:absolute;top:-12px;left:20px;background:var(--dourado);color:#141F2B;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:4px}
 .ofer-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dourado);margin-bottom:6px}
 .ofer-name{font-family:var(--fm);font-size:19px;font-weight:300;color:var(--txt);margin-bottom:10px;line-height:1.2}
 .ofer-pitch{font-size:13px;color:var(--txt-m);line-height:1.55;min-height:60px;margin-bottom:14px}
@@ -625,7 +660,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .ofer-price{font-family:var(--fm);font-size:24px;font-weight:300;color:var(--dourado-bright)}
 .ofer-inst{font-size:12px;color:var(--txt-d);margin-top:2px}
 .ofer-anchor{font-size:11.5px;color:var(--dourado-bright);margin-top:8px;line-height:1.4;font-style:italic}
-@media(max-width:980px){.ofer-grid{grid-template-columns:repeat(2,1fr)}}
+.ofer-btn{display:block;text-align:center;margin-top:16px;background:transparent;border:1px solid var(--dourado);color:var(--dourado);font-size:13px;font-weight:600;padding:11px;border-radius:var(--radius);text-decoration:none;transition:.25s var(--ease)}
+.ofer-btn:hover{background:var(--dourado);color:var(--azul-dark)}
+.ofer-card.featured .ofer-btn{background:var(--dourado);color:#141F2B}
+.ofer-card.featured .ofer-btn:hover{background:var(--dourado-bright)}
+@media(max-width:980px){.ofer-grid{grid-template-columns:repeat(2,1fr)}.ofer-card.featured{transform:none}}
 @media(max-width:600px){.ofer-grid{grid-template-columns:1fr}}
 .ofer-pay-note{text-align:center;font-size:12.5px;color:var(--txt-d);margin-top:30px}
 
@@ -690,7 +729,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<section class="s-agita">
+<section class="s-agita section-light">
   <div class="wrap">
     <div class="agita-head reveal">
       <div class="eyebrow">O que a maioria das empresas não está vendo</div>
@@ -724,9 +763,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <section class="s-core" id="metodo">
   <div class="wrap">
     <div class="core-header reveal">
-      <div class="eyebrow">Método Órbita CORE</div>
+      <div class="eyebrow">Método Órbita CORE™</div>
       <h2 class="sec-title">Conecte estratégia, operação e <em>experiência.</em></h2>
-      <p class="core-tagline">Toque em cada pilar da órbita para descobrir onde sua empresa está perdendo receita:</p>
+      <p class="core-tagline">Quatro pilares que orbitam o cliente — e revelam onde sua empresa está perdendo receita.</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;" class="reveal scale-in">
       <div id="orbit-stage">
@@ -739,132 +778,36 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       </div>
       <div id="orbit-trigger"></div>
     </div>
-  </div>
-  <div id="core-interactive">
-    <div id="core-tabs">
-      <button class="core-tab active" data-tab="pillars">
-        <span style="display:flex;gap:4px">
-          <span class="tab-dot" style="background:#028090;color:#fff;font-size:9px">C</span>
-          <span class="tab-dot" style="background:#1D5FA5;color:#fff;font-size:9px">O</span>
-          <span class="tab-dot" style="background:#1D9E75;color:#fff;font-size:9px">R</span>
-          <span class="tab-dot" style="background:#C9A84C;color:#141F2B;font-size:9px">E</span>
-        </span>
-        Os Pilares
-      </button>
-      <button class="core-tab" data-tab="maturity">Níveis de Maturidade</button>
-      <button class="core-tab" data-tab="coreinfo">
-        <span class="tab-dot" style="background:var(--dourado);color:var(--azul-dark);font-size:11px">★</span>
-        CORE Integrado
-      </button>
+
+    <div class="core-grid-static reveal">
+      <div class="core-static-card">
+        <div class="core-static-letter" style="background:#028090">C</div>
+        <div class="core-static-name">Compreensão do Cliente</div>
+        <p class="core-static-desc">Voz do cliente, NPS, CSAT, jornada real, dados qualitativos e quantitativos. O que ele sente, espera e onde se frustra.</p>
+      </div>
+      <div class="core-static-card">
+        <div class="core-static-letter" style="background:#1D5FA5">O</div>
+        <div class="core-static-name">Operação e Excelência</div>
+        <p class="core-static-desc">Processos, SLAs, gargalos operacionais e falhas invisíveis da experiência. Integração entre departamentos.</p>
+      </div>
+      <div class="core-static-card">
+        <div class="core-static-letter" style="background:#1D9E75">R</div>
+        <div class="core-static-name">Relacionamento e Lealdade</div>
+        <p class="core-static-desc">Fidelização, CRM, recompra, recuperação de inativos, programas de relacionamento e LTV.</p>
+      </div>
+      <div class="core-static-card">
+        <div class="core-static-letter" style="background:#C9A84C;color:#141F2B">E</div>
+        <div class="core-static-name">Evolução da Experiência</div>
+        <p class="core-static-desc">Melhoria contínua, IA aplicada à experiência, automação e benchmarking. O futuro da experiência do seu cliente.</p>
+      </div>
     </div>
-    <div id="core-panels">
-      <!-- PILLARS -->
-      <div class="core-panel visible" id="cpanel-pillars">
-        <div class="panel-inner">
-          <div id="pillar-sel-row">
-            <button class="psel" data-key="c"><div class="psel-dot" style="background:#028090;color:#fff">C</div><span class="psel-label">Customer Understanding</span></button>
-            <button class="psel" data-key="o"><div class="psel-dot" style="background:#1D5FA5;color:#fff">O</div><span class="psel-label">Operational Excellence</span></button>
-            <button class="psel" data-key="r"><div class="psel-dot" style="background:#1D9E75;color:#fff">R</div><span class="psel-label">Relationship &amp; Loyalty</span></button>
-            <button class="psel" data-key="e"><div class="psel-dot" style="background:#C9A84C;color:#141F2B">E</div><span class="psel-label">Experience Evolution</span></button>
-          </div>
-          <p id="pillar-hint">Toque em cada letra para entender o pilar</p>
 
-          <!-- Secondary nav: mobile only — aparece logo abaixo dos quadrantes -->
-          <div id="pillars-secondary-nav" style="display:none">
-            <button class="core-tab" data-tab="maturity">Níveis de Maturidade</button>
-            <button class="core-tab" data-tab="coreinfo">
-              <span class="tab-dot" style="background:var(--dourado);color:var(--azul-dark);font-size:11px">★</span>
-              CORE Integrado
-            </button>
-          </div>
-          <div id="pillar-detail-card" style="display:none"></div>
-
-
-        </div>
-      </div>
-      <!-- MATURITY -->
-      <div class="core-panel" id="cpanel-maturity">
-        <div class="panel-inner">
-          <h3 style="font-family:var(--fm);font-size:clamp(20px,3.5vw,28px);font-weight:200;color:var(--txt);margin-bottom:14px;line-height:1.1;text-align:center">Quanto maior a maturidade, <em style="color:var(--dourado-bright)">mais próximo do cliente.</em></h3>
-          <div class="mat-intro-block"><p>A Órbita CORE representa o equilíbrio da experiência do cliente. <strong>Quanto maior o nível de maturidade, mais próximo o pilar está do núcleo</strong>, aumentando a estabilidade organizacional.</p><p>O método trata de equilíbrio; uma órbita desequilibrada gera experiência inconsistente.</p></div>
-          <div class="mat-rows">
-            <div class="mat-row"><div class="mat-num-b" style="border-color:#028090;color:#028090">5</div><div style="flex:1"><div class="mat-row-name">Liderando</div><div class="mat-row-desc">Excelência orbital plena. A organização atingiu a Experience Stability Zone.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:100%;background:#028090"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:#1D9E75;color:#1D9E75">4</div><div style="flex:1"><div class="mat-row-name">Avançado</div><div class="mat-row-desc">Alta integração entre pilares com resultados consistentes e mensuráveis.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:80%;background:#1D9E75"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:var(--dourado);color:var(--dourado)">3</div><div style="flex:1"><div class="mat-row-name">Estruturado</div><div class="mat-row-desc">Processos definidos e governança estabelecida. A base está construída.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:60%;background:var(--dourado)"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:#B07830;color:#B07830">2</div><div style="flex:1"><div class="mat-row-name">Desenvolvendo</div><div class="mat-row-desc">Primeiras iniciativas coordenadas emergindo. Consciência sem estrutura sistêmica.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:40%;background:#B07830"></div></div></div></div>
-            <div class="mat-row"><div class="mat-num-b" style="border-color:rgba(245,240,232,.25);color:rgba(245,240,232,.4)">1</div><div style="flex:1"><div class="mat-row-name">Inicial</div><div class="mat-row-desc">Práticas isoladas, sem estrutura sistêmica. Cada área atua de forma independente.</div><div class="mat-bar-bg"><div class="mat-bar-fill" style="width:20%;background:rgba(245,240,232,.25)"></div></div></div></div>
-          </div>
-        </div>
-      </div>
-      <!-- CORE INTEGRADO — with static orbit visual on the right -->
-      <div class="core-panel" id="cpanel-coreinfo">
-        <div class="panel-inner">
-          <div class="ci-header">
-            <div class="ci-star">★</div>
-            <div>
-              <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:4px">O Núcleo</div>
-              <div style="font-family:var(--fm);font-size:24px;font-weight:300;color:var(--txt)">CORE Integrado</div>
-            </div>
-          </div>
-          <div class="ci-layout">
-            <div class="ci-text-block">
-              <div class="ci-single-card">Sua experiência de cliente só funciona em <strong>EQUILÍBRIO</strong>.<br>Se um pilar avança sozinho, o resto da operação <strong>TRAVA</strong> — e você <strong>PERDE RECEITA</strong>.</div>
-              <div class="ci-callout">O <strong>Diagnóstico Órbita CORE</strong> revela qual pilar está limitando o crescimento da sua organização hoje.</div>
-            </div>
-            <!-- Static orbit — C=West, O=North, R=East, E=South; nucleus glowing -->
-            <div class="ci-orbit-wrap">
-              <svg class="ci-orbit-svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <radialGradient id="coreGlow2" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#B89968" stop-opacity="0.6"/>
-                    <stop offset="50%" stop-color="#B89968" stop-opacity="0.18"/>
-                    <stop offset="100%" stop-color="#B89968" stop-opacity="0"/>
-                  </radialGradient>
-                </defs>
-                <!-- Glow halo -->
-                <circle cx="110" cy="110" r="38" fill="url(#coreGlow2)"/>
-                <!-- 5 orbit rings — same proportions as animated orbit -->
-                <!-- Ring 1 (outermost) -->
-                <circle cx="110" cy="110" r="100" stroke="#B89968" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.18"/>
-                <!-- Ring 2 -->
-                <circle cx="110" cy="110" r="82" stroke="#B89968" stroke-width="0.9" stroke-dasharray="4 3.5" opacity="0.25"/>
-                <!-- Ring 3 -->
-                <circle cx="110" cy="110" r="64" stroke="#B89968" stroke-width="1" stroke-dasharray="3.5 3" opacity="0.35"/>
-                <!-- Ring 4 — nodes sit here (penúltimo) -->
-                <circle cx="110" cy="110" r="46" stroke="#B89968" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
-                <!-- Ring 5 (innermost, closest to nucleus) -->
-                <circle cx="110" cy="110" r="30" stroke="#B89968" stroke-width="0.8" stroke-dasharray="2 2.5" opacity="0.3"/>
-                <!-- Nucleus — no dot inside -->
-                <circle cx="110" cy="110" r="22" fill="#141F2B" stroke="#D4B87A" stroke-width="1.8"/>
-                <circle cx="110" cy="110" r="14" fill="rgba(212,184,122,0.1)" stroke="#D4B87A" stroke-width="0.7" stroke-dasharray="2 2"/>
-                <text x="110" y="106" text-anchor="middle" font-family="Fraunces,serif" font-size="7" font-weight="600" fill="#F5F0E8" letter-spacing="1">CORE</text>
-                <text x="110" y="116" text-anchor="middle" font-family="Inter,sans-serif" font-size="4" font-weight="700" fill="#B89968" letter-spacing="0.8">INTEGRADO</text>
-                <!-- Connector lines from nucleus to nodes on ring 4 -->
-                <line x1="110" y1="88" x2="110" y2="66" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <line x1="88" y1="110" x2="66" y2="110" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <line x1="132" y1="110" x2="154" y2="110" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <line x1="110" y1="132" x2="110" y2="154" stroke="#B89968" stroke-width="0.6" opacity="0.4" stroke-dasharray="2 2"/>
-                <!-- Node C — West on ring 4 -->
-                <circle cx="64" cy="110" r="14" fill="#028090" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="64" y="114.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="white">C</text>
-                <!-- Node O — North on ring 4 -->
-                <circle cx="110" cy="64" r="14" fill="#1D5FA5" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="110" y="68.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="white">O</text>
-                <!-- Node R — East on ring 4 -->
-                <circle cx="156" cy="110" r="14" fill="#1D9E75" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="156" y="114.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="white">R</text>
-                <!-- Node E — South on ring 4 -->
-                <circle cx="110" cy="156" r="14" fill="#C9A84C" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
-                <text x="110" y="160.5" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="600" fill="#141F2B">E</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="core-integrado-note reveal">
+      <strong>Método Órbita CORE™ — um sistema integrado.</strong> Não é possível melhorar retenção endereçando os 4 pilares isoladamente. Se um avança sozinho, o resto da operação trava — e você perde receita.
     </div>
   </div>
 </section>
-<section class="s-enc">
+<section class="s-enc section-light">
   <div class="wrap">
     <div class="enc-head reveal">
       <div class="eyebrow">6 encontros ao vivo</div>
@@ -882,28 +825,28 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       <div class="enc-item">
         <div class="enc-dot"></div>
         <div class="enc-num">Encontro 02</div>
-        <div class="enc-title">Customer Understanding</div>
+        <div class="enc-title">Compreensão do Cliente</div>
         <p class="enc-desc">Voz do Cliente, pesquisa de satisfação, NPS, CSAT, jornada do cliente e comportamento do comprador. O que o cliente sente, espera e onde se frustra.</p>
         <span class="enc-deliv">Mapa da Jornada</span>
       </div>
       <div class="enc-item">
         <div class="enc-dot"></div>
         <div class="enc-num">Encontro 03</div>
-        <div class="enc-title">Operational Excellence</div>
+        <div class="enc-title">Operação e Excelência</div>
         <p class="enc-desc">Converter informações em melhorias concretas. Processos, fluxos, padronização, gargalos operacionais e falhas invisíveis da experiência.</p>
         <span class="enc-deliv">Matriz de Priorização</span>
       </div>
       <div class="enc-item">
         <div class="enc-dot"></div>
         <div class="enc-num">Encontro 04</div>
-        <div class="enc-title">Relationship &amp; Loyalty</div>
+        <div class="enc-title">Relacionamento e Lealdade</div>
         <p class="enc-desc">Criar recorrência e retenção real. Fidelização, CRM, programas de relacionamento, recompra e recuperação de clientes inativos.</p>
         <span class="enc-deliv">Plano de Retenção 90d</span>
       </div>
       <div class="enc-item">
         <div class="enc-dot"></div>
         <div class="enc-num">Encontro 05</div>
-        <div class="enc-title">Experience Evolution</div>
+        <div class="enc-title">Evolução da Experiência</div>
         <p class="enc-desc">Melhoria contínua com inteligência. IA aplicada à experiência, automação dos pontos estratégicos e benchmarking de mercado.</p>
         <span class="enc-deliv">Plano de Evolução</span>
       </div>
@@ -969,31 +912,31 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     </div>
   </div>
 </section>
-<section class="s-ad">
+<section class="s-ad section-light" id="antesdepois">
   <div class="wrap">
     <div class="ad-head reveal">
       <div class="eyebrow">Resultado final</div>
       <h2 class="sec-title">O que muda na sua empresa <em>de verdade.</em></h2>
     </div>
-    <div class="ad-toggle reveal">
-      <button class="ad-tab active" data-tab="antes">Antes da mentoria</button>
-      <button class="ad-tab" data-tab="depois">Depois da mentoria</button>
-    </div>
-    <div class="ad-panel active" id="ad-antes">
-      <div class="ad-row is-before"><span class="ad-icon">–</span><span class="ad-text">Clientes entram e não retornam</span></div>
-      <div class="ad-row is-before"><span class="ad-icon">–</span><span class="ad-text">Dependência de promoções para vender</span></div>
-      <div class="ad-row is-before"><span class="ad-icon">–</span><span class="ad-text">Falta de integração entre áreas</span></div>
-      <div class="ad-row is-before"><span class="ad-icon">–</span><span class="ad-text">Nenhuma visão real do cliente</span></div>
-      <div class="ad-row is-before"><span class="ad-icon">–</span><span class="ad-text">Experiência do cliente como custo, não como estratégia</span></div>
-      <div class="ad-row is-before"><span class="ad-icon">–</span><span class="ad-text">Falta de cultura e governança</span></div>
-    </div>
-    <div class="ad-panel" id="ad-depois">
-      <div class="ad-row is-after"><span class="ad-icon">✓</span><span class="ad-text">Retenção estruturada e mensurável</span></div>
-      <div class="ad-row is-after"><span class="ad-icon">✓</span><span class="ad-text">Recompra crescente sem depender de desconto</span></div>
-      <div class="ad-row is-after"><span class="ad-icon">✓</span><span class="ad-text">Departamentos alinhados ao cliente</span></div>
-      <div class="ad-row is-after"><span class="ad-icon">✓</span><span class="ad-text">Governança real da experiência</span></div>
-      <div class="ad-row is-after"><span class="ad-icon">✓</span><span class="ad-text">Experiência do cliente como motor de decisão do negócio</span></div>
-      <div class="ad-row is-after"><span class="ad-icon">✓</span><span class="ad-text">Crescimento com base fidelizada</span></div>
+    <div class="ad-cols reveal">
+      <div class="ad-col is-before">
+        <div class="ad-col-title">Antes da mentoria</div>
+        <div class="ad-row"><span class="ad-icon">–</span><span class="ad-text">Clientes entram e não retornam</span></div>
+        <div class="ad-row"><span class="ad-icon">–</span><span class="ad-text">Dependência de promoções para vender</span></div>
+        <div class="ad-row"><span class="ad-icon">–</span><span class="ad-text">Falta de integração entre áreas</span></div>
+        <div class="ad-row"><span class="ad-icon">–</span><span class="ad-text">Nenhuma visão real do cliente</span></div>
+        <div class="ad-row"><span class="ad-icon">–</span><span class="ad-text">Experiência do cliente como custo, não como estratégia</span></div>
+        <div class="ad-row"><span class="ad-icon">–</span><span class="ad-text">Falta de cultura e governança</span></div>
+      </div>
+      <div class="ad-col is-after">
+        <div class="ad-col-title">Depois da mentoria</div>
+        <div class="ad-row"><span class="ad-icon">✓</span><span class="ad-text">Retenção estruturada e mensurável</span></div>
+        <div class="ad-row"><span class="ad-icon">✓</span><span class="ad-text">Recompra crescente sem depender de desconto</span></div>
+        <div class="ad-row"><span class="ad-icon">✓</span><span class="ad-text">Departamentos alinhados ao cliente</span></div>
+        <div class="ad-row"><span class="ad-icon">✓</span><span class="ad-text">Governança real da experiência</span></div>
+        <div class="ad-row"><span class="ad-icon">✓</span><span class="ad-text">Experiência do cliente como motor de decisão do negócio</span></div>
+        <div class="ad-row"><span class="ad-icon">✓</span><span class="ad-text">Crescimento com base fidelizada</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1065,7 +1008,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <div class="test-grid reveal">
       <div class="test-card">
         <p class="test-quote">"O método Órbita Core traduz a experiência do cliente em resultados concretos ao conectar estratégia, operação, relacionamento e evolução contínua de forma prática, estruturada e orientada ao negócio."</p>
-        <div class="test-author">Thabata</div>
+        <div class="test-author">Tábata Antunes</div>
+        <div class="test-role">Especialista em Atendimento e Experiência</div>
       </div>
       <div class="test-card">
         <p class="test-quote">"Excelente approach e metodologia. A estratégia de CX na maioria das empresas ainda é muito centrada no CS — parabéns pela criação de uma visão mais ampla que permite a execução mais estruturada."</p>
@@ -1086,7 +1030,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   </div>
 </section>
 
-<section class="s-ofer" id="investimento">
+<section class="s-ofer section-light" id="investimento">
   <div class="wrap">
     <div class="ofer-head reveal">
       <div class="eyebrow">Investimento</div>
@@ -1106,7 +1050,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </ul>
         <div class="ofer-price-wrap">
           <div class="ofer-price">R$ 4.800</div>
-          <div class="ofer-inst">à vista — ou 12x de 400</div>
+          <div class="ofer-inst">ou 12x de 400</div>
+          <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
         </div>
       </div>
       <div class="ofer-card featured">
@@ -1122,8 +1067,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </ul>
         <div class="ofer-price-wrap">
           <div class="ofer-price">R$ 6.900</div>
-          <div class="ofer-inst">à vista — ou 12x de 575</div>
+          <div class="ofer-inst">ou 12x de 575</div>
           <div class="ofer-anchor">Menos do que a maioria perde em 2-3 meses com clientes que não voltam.</div>
+          <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
         </div>
       </div>
       <div class="ofer-card">
@@ -1138,7 +1084,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </ul>
         <div class="ofer-price-wrap">
           <div class="ofer-price">R$ 15.000</div>
-          <div class="ofer-inst">à vista — ou 12x de 1.250</div>
+          <div class="ofer-inst">ou 12x de 1.250</div>
+          <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
         </div>
       </div>
       <div class="ofer-card">
@@ -1153,7 +1100,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         </ul>
         <div class="ofer-price-wrap">
           <div class="ofer-price">R$ 30.000</div>
-          <div class="ofer-inst">à vista — ou 12x de 2.500</div>
+          <div class="ofer-inst">ou 12x de 2.500</div>
+          <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20e%20tenho%20interesse%20na%20mentoria%20%C3%93rbita%20CORE." target="_blank" class="ofer-btn">Quero essa opção →</a>
         </div>
       </div>
     </div>
@@ -1211,12 +1159,11 @@ var rO=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isInterse
 document.querySelectorAll(".reveal").forEach(function(el){rO.observe(el)});
 document.getElementById("hamburger").addEventListener("click",function(){document.getElementById("nav-mobile").classList.toggle("open")});
 document.querySelectorAll(".nav-mobile .nav-link").forEach(function(l){l.addEventListener("click",function(){document.getElementById("nav-mobile").classList.remove("open")})});
-document.querySelectorAll(".srv-card").forEach(function(c){c.addEventListener("click",function(){var o=c.classList.contains("open");document.querySelectorAll(".srv-card").forEach(function(x){x.classList.remove("open")});if(!o)c.classList.add("open")})});
 var PILLARS={
-  c:{color:"#028090",tc:"#fff",label:"Pilar C",name:"Customer Understanding",html:"O <strong style=\"color:#D4B87A\">entendimento do cliente</strong> é o ponto de partida para <strong style=\"color:#D4B87A\">decisões mais inteligentes</strong>. Este pilar conecta dados, percepções e comportamentos para orientar estratégias que geram melhores experiências e resultados, tomando decisões baseadas em dados reais e não em percepções.",q:"Sua organização escuta o que o cliente sente, ou apenas o que ele diz?",oT:50000,oP:60,pT:15000,ph:0.0},
-  o:{color:"#1D5FA5",tc:"#fff",label:"Pilar O",name:"Operational Excellence",html:"Uma <strong style=\"color:#D4B87A\">experiência excepcional não acontece por acaso</strong>. Este pilar estrutura processos, define responsabilidades e fortalece a governança para garantir que a operação entregue, de forma consistente, o <strong style=\"color:#D4B87A\">valor esperado pelo cliente</strong>.",q:"A operação da sua empresa sustenta a experiência, ou trabalha contra ela?",oT:62000,oP:200,pT:18000,ph:2.1},
-  r:{color:"#1D9E75",tc:"#fff",label:"Pilar R",name:"Relationship & Loyalty",html:"Construir confiança ao longo do tempo pela consistência em cada ponto de contato. <strong style=\"color:#D4B87A\">Lealdade não se compra com campanhas</strong>, ela emerge quando o cliente percebe que a organização o conhece de verdade.<br><br>Quanto mais próximo do cliente, mais o relacionamento deixa de ser transacional e passa a ser genuíno, criando <strong style=\"color:#D4B87A\">defensores da marca</strong> no lugar de compradores ocasionais.",q:"O cliente da sua organização volta porque quer, ou porque não encontrou alternativa?",oT:44000,oP:315,pT:13000,ph:4.2},
-  e:{color:"#C9A84C",tc:"#141F2B",label:"Pilar E",name:"Experience Evolution",html:"A <strong style=\"color:#D4B87A\">maturidade de uma organização</strong> é medida pela sua capacidade de aprender e evoluir. Este pilar converte dados, feedbacks e resultados em <strong style=\"color:#D4B87A\">melhorias contínuas</strong> que fortalecem a experiência do cliente. Além de utilizar novas tecnologias e inserção de IA para melhorar o negócio.",q:"Sua organização aprende com o cliente, ou repete os mesmos padrões?",oT:55000,oP:135,pT:20000,ph:1.0},
+  c:{color:"#028090",oT:50000,oP:60,pT:15000,ph:0.0},
+  o:{color:"#1D5FA5",oT:62000,oP:200,pT:18000,ph:2.1},
+  r:{color:"#1D9E75",oT:44000,oP:315,pT:13000,ph:4.2},
+  e:{color:"#C9A84C",oT:55000,oP:135,pT:20000,ph:1.0},
 };
 var TRIGS=["Sua organização está realmente próxima do cliente?","O cliente ocupa o centro das decisões, ou apenas dos discursos?","Quanto mais próximos do cliente, mais integrados se tornam os pilares.","A estabilidade da experiência depende do equilíbrio entre os quatro pilares.","Descubra como sua organização se posiciona dentro da Órbita CORE."];
 var PKS=["c","o","r","e"],RF=[0,.16,.30,.46,.63,.82];
@@ -1246,62 +1193,12 @@ function orbitFrame(ts){
   });
   rafId=requestAnimationFrame(orbitFrame);
 }
-function activatePillar(k){
-  PKS.forEach(function(key){document.getElementById("v2-node-"+key).classList.toggle("active",key===k)});
-  document.querySelectorAll(".psel").forEach(function(b){b.classList.toggle("active",b.dataset.key===k)});
-  document.getElementById("core-center-btn").classList.remove("active");
-  var p=PILLARS[k],card=document.getElementById("pillar-detail-card");
-  card.style.display="block";
-  var hint=document.getElementById("pillar-hint");if(hint)hint.style.display="none";
-  card.innerHTML=
-    '<div class="pd-header"><div class="pd-badge" style="background:'+p.color+';color:'+p.tc+'">'+k.toUpperCase()+'</div><div><div class="pd-eyebrow" style="color:'+p.color+'">'+p.label+'</div><div class="pd-name">'+p.name+'</div></div></div>'+
-    '<div class="pd-single-card" style="border-color:'+p.color+'33"><p>'+p.html+'</p></div>'+
-    '<div class="pd-question">'+p.q+'</div>';
-  switchTab("pillars");
-  setTimeout(function(){var el2=document.getElementById("core-interactive");var nh=document.querySelector(".nav").offsetHeight;window.scrollTo({top:el2.getBoundingClientRect().top+window.pageYOffset-nh-12,behavior:"smooth"})},60);
-}
-function switchTab(n){document.querySelectorAll(".core-tab").forEach(function(b){b.classList.toggle("active",b.dataset.tab===n)});document.querySelectorAll(".core-panel").forEach(function(p){p.classList.toggle("visible",p.id==="cpanel-"+n)})}
-
-document.querySelectorAll(".core-tab").forEach(function(b){b.addEventListener("click",function(){switchTab(b.dataset.tab)})});
-// Mobile secondary nav setup
-function setupSecondaryNav(){
-  var secNav=document.getElementById("pillars-secondary-nav");
-  if(!secNav)return;
-  var isMobile=window.innerWidth<=640;
-  secNav.style.display=isMobile?"flex":"none";
-  secNav.querySelectorAll(".core-tab").forEach(function(b){
-    b.classList.remove("active");
-    b.addEventListener("click",function(){switchTab(b.dataset.tab)});
-  });
-}
-function syncSecondaryTabs(n){
-  var secNav=document.getElementById("pillars-secondary-nav");
-  if(!secNav)return;
-  secNav.querySelectorAll(".core-tab").forEach(function(b){b.classList.toggle("active",b.dataset.tab===n)});
-}
-var origSwitchTab=switchTab;
-switchTab=function(n){origSwitchTab(n);syncSecondaryTabs(n);};
-setupSecondaryNav();
-window.addEventListener("resize",setupSecondaryNav);
-PKS.forEach(function(k){document.getElementById("v2-node-"+k).addEventListener("click",function(){activatePillar(k)})});
-document.querySelectorAll(".psel").forEach(function(b){b.addEventListener("click",function(){activatePillar(b.dataset.key)})});
-document.getElementById("core-center-btn").addEventListener("click",function(){
-  document.getElementById("core-center-btn").classList.add("active");
-  PKS.forEach(function(k){document.getElementById("v2-node-"+k).classList.remove("active")});
-  document.querySelectorAll(".psel").forEach(function(b){b.classList.remove("active")});
-  switchTab("coreinfo");
-  setTimeout(function(){var el2=document.getElementById("core-interactive");var nh=document.querySelector(".nav").offsetHeight;window.scrollTo({top:el2.getBoundingClientRect().top+window.pageYOffset-nh-12,behavior:"smooth"})},60);
-});
 var tIdx=0;function rotateTrig(){var el3=document.getElementById("orbit-trigger");el3.style.opacity="0";setTimeout(function(){el3.textContent=TRIGS[tIdx++%TRIGS.length];el3.style.opacity="1"},450)}
 setTimeout(function(){rotateTrig();setInterval(rotateTrig,4600)},1800);
 function init(){buildOrbit();rafId=requestAnimationFrame(orbitFrame);window.addEventListener("resize",function(){cancelAnimationFrame(rafId);trails={c:[],o:[],r:[],e:[]};baseT=null;buildOrbit();rafId=requestAnimationFrame(orbitFrame)})}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}
 </script>
-</body>
-</html>
-
-</body>
-</html><script>
+<script>
 // Contadores animados (Agitação)
 (function(){
   var counted = false;
