@@ -711,7 +711,7 @@ section[id]{scroll-margin-top:80px}
 </style>
 <style>
 /* ===== HERO KIT ===== */
-.s-mhero{padding:140px 0 80px;position:relative;overflow:hidden;text-align:center}
+.s-mhero{padding:140px 0 56px;position:relative;overflow:hidden;text-align:center}
 .mhero-reinforce{display:inline-block;font-family:var(--fm);font-size:19px;font-weight:400;color:var(--txt);background:rgba(184,153,104,.1);border:1px solid var(--dourado);border-radius:10px;padding:18px 32px;margin:34px 0 36px;line-height:1.4;max-width:460px}
 @media(max-width:480px){.mhero-reinforce{font-size:17px;padding:16px 22px;margin:26px 0 28px}}
 .mhero-guarantee{font-size:13px;color:var(--dourado-bright);margin-top:10px}
@@ -738,7 +738,7 @@ section[id]{scroll-margin-top:80px}
 }
 
 /* ===== PROBLEMA ===== */
-.s-problema{padding:90px 0}
+.s-problema{padding:60px 0 90px}
 .problema-head{max-width:680px;margin:0 auto 44px;text-align:center}
 .problema-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .problema-card{background:#FFFFFF;color:#1E2A3A;border-top:3px solid var(--dourado);border-radius:8px;padding:28px 24px;
@@ -792,7 +792,8 @@ section[id]{scroll-margin-top:80px}
 .s-preco{padding:90px 0}
 .preco-head{max-width:680px;margin:0 auto 16px;text-align:center}
 .preco-urgency{display:inline-block;margin-top:18px;font-size:12.5px;color:var(--dourado-bright);border:1px solid var(--azul-border-gold);padding:7px 16px;border-radius:20px}
-.preco-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:840px;margin:46px auto 0}
+.preco-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:840px;margin:46px auto 0;position:relative}
+.preco-or{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:var(--azul-dark);border:1px solid var(--dourado);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:13px;font-weight:600;color:var(--dourado-bright);letter-spacing:.04em;text-transform:uppercase;z-index:3;box-shadow:0 4px 14px rgba(0,0,0,.35)}
 .preco-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:30px 26px;position:relative}
 .preco-card.featured{border:2px solid var(--dourado);background:rgba(184,153,104,.06)}
 .preco-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dourado);margin-bottom:6px}
@@ -1097,6 +1098,7 @@ section[id]{scroll-margin-top:80px}
         </div>
         <a href="https://pay.voompcreators.com.br/15302/offer/62DKCf" target="_blank" class="ofer-btn" style="border-color:#8A6B3A">Quero os Scripts por R$17</a>
       </div>
+      <div class="preco-or" aria-hidden="true">ou</div>
       <div class="preco-card featured">
         <span class="ofer-badge">★ Recomendado</span>
         <div class="preco-tag">Kit Completo</div>
