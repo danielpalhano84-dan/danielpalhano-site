@@ -527,6 +527,7 @@ section[id]{scroll-margin-top:80px}
 .section-dark{background:var(--azul-dark)}
 .section-light{
   background:var(--creme);
+  color:#1E2A3A;
   --txt:#1E2A3A;
   --txt-m:rgba(30,42,58,.7);
   --txt-d:rgba(30,42,58,.62);
@@ -711,9 +712,10 @@ section[id]{scroll-margin-top:80px}
 <style>
 /* ===== HERO KIT ===== */
 .s-mhero{padding:140px 0 80px;position:relative;overflow:hidden;text-align:center}
-.mhero-reinforce{font-size:13px;color:var(--dourado-bright);margin:0 0 22px}
+.mhero-reinforce{display:inline-block;font-family:var(--fm);font-size:19px;font-weight:400;color:var(--txt);background:rgba(184,153,104,.1);border:1px solid var(--dourado);border-radius:10px;padding:18px 32px;margin:34px 0 36px;line-height:1.4;max-width:460px}
+@media(max-width:480px){.mhero-reinforce{font-size:17px;padding:16px 22px;margin:26px 0 28px}}
 .mhero-guarantee{font-size:13px;color:var(--dourado-bright);margin-top:10px}
-.hero-mockup{display:flex;align-items:flex-end;justify-content:center;gap:12px;max-width:560px;margin:28px auto 6px;position:relative;z-index:1}
+.hero-mockup{display:flex;align-items:flex-end;justify-content:center;gap:12px;max-width:560px;margin:28px auto 16px;position:relative;z-index:1}
 .mockup-card{border-radius:10px;box-shadow:0 18px 36px rgba(0,0,0,.35)}
 .mockup-cover{width:118px;padding:16px 13px;background:var(--azul-dark);border:1px solid var(--dourado);transform:rotate(-4deg);display:flex;flex-direction:column;align-items:flex-start;gap:9px}
 .mockup-cover-mark{opacity:.9}
@@ -732,14 +734,14 @@ section[id]{scroll-margin-top:80px}
 .mockup-check-item span.ck.done{background:#8A6B3A}
 .mockup-check-item span.ck.done::after{content:'✓';position:absolute;top:-3px;left:0.5px;font-size:7.5px;color:#fff}
 @media(max-width:480px){
-  .hero-mockup{transform:scale(.76);margin:20px auto -10px;gap:8px}
+  .hero-mockup{transform:scale(.76);margin:20px auto 8px;gap:8px}
 }
 
 /* ===== PROBLEMA ===== */
 .s-problema{padding:90px 0}
 .problema-head{max-width:680px;margin:0 auto 44px;text-align:center}
 .problema-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.problema-card{background:#FFFFFF;border-top:3px solid var(--dourado);border-radius:8px;padding:28px 24px;
+.problema-card{background:#FFFFFF;color:#1E2A3A;border-top:3px solid var(--dourado);border-radius:8px;padding:28px 24px;
   --txt:#1E2A3A;--txt-m:rgba(30,42,58,.68);--txt-d:rgba(30,42,58,.62)}
 .problema-icon{width:40px;height:40px;margin-bottom:18px}
 .problema-icon svg{width:100%;height:100%}
@@ -778,6 +780,7 @@ section[id]{scroll-margin-top:80px}
 .recebe-card{background:var(--azul-dark);border:1px solid var(--dourado);border-radius:10px;padding:30px 26px;--txt:#F5F0E8;--txt-m:rgba(245,240,232,.7);--dourado:#B89968;--dourado-bright:#D4B87A}
 .recebe-card-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dourado-bright);border:1px solid rgba(245,240,232,.2);display:inline-block;padding:4px 10px;border-radius:5px;margin-bottom:16px}
 .recebe-card-title{font-family:var(--fm);font-size:21px;font-weight:300;color:#F5F0E8;line-height:1.25;margin-bottom:20px}
+.recebe-card-desc{font-size:14px;color:var(--txt-m);line-height:1.65;margin-bottom:22px}
 .recebe-card-price-wrap{border-top:1px solid rgba(245,240,232,.15);border-bottom:1px solid rgba(245,240,232,.15);padding:18px 0;margin-bottom:18px}
 .recebe-card-old{font-size:13px;color:rgba(245,240,232,.52);text-decoration:line-through;margin-bottom:4px}
 .recebe-card-price{font-family:var(--fm);font-size:34px;color:var(--dourado-bright)}
@@ -854,7 +857,7 @@ section[id]{scroll-margin-top:80px}
         <a href="https://danielpalhano.com.br/mentoria" target="_blank" class="nav-link nav-link-mentoria">Ver Mentoria</a>
       </div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-      <a href="https://pay.voompcreators.com.br/15303/offer/n08MSf" target="_blank" class="nav-cta">Quero o Kit</a>
+      <a href="#recebe" class="nav-cta">Ver o que recebo</a>
     </div>
     <div class="nav-mobile" id="nav-mobile">
       <a href="#problema" class="nav-link">O Problema</a>
@@ -892,7 +895,7 @@ section[id]{scroll-margin-top:80px}
     </div>
     <p class="mhero-reinforce reveal">Você investiria R$27 para trazer de volta apenas um cliente?</p>
     <div class="mhero-actions reveal">
-      <a href="https://pay.voompcreators.com.br/15303/offer/n08MSf" target="_blank" class="btn-primary">Quero o Kit por R$27 →</a>
+      <a href="#recebe" class="btn-primary">Ver o que está incluso</a>
     </div>
     <div class="mhero-note reveal">Acesso imediato após o pagamento · Promocional por tempo limitado</div>
     <div class="mhero-guarantee reveal">✓ Garantia de 7 dias, devolução de 100% se não gostar</div>
@@ -968,13 +971,10 @@ section[id]{scroll-margin-top:80px}
       </div>
       <div class="recebe-sticky reveal">
         <div class="recebe-card">
-          <div class="recebe-card-tag">Scripts Prontos</div>
+          <div class="recebe-card-tag">Resumo do Kit</div>
           <div class="recebe-card-title">Kit Reativação<br>e Fidelização</div>
-          <div class="recebe-card-price-wrap">
-            <div class="recebe-card-old">De R$97</div>
-            <div class="recebe-card-price">R$17<span>ou R$27 completo</span></div>
-          </div>
-          <a href="https://pay.voompcreators.com.br/15303/offer/n08MSf" target="_blank" class="btn-primary" style="width:100%;justify-content:center;box-sizing:border-box">Quero o Kit por R$27 →</a>
+          <p class="recebe-card-desc">Scripts, checklist, protocolo e pesquisa prontos para aplicar na rotina da clínica.</p>
+          <a href="#preco" class="btn-primary" style="width:100%;justify-content:center;box-sizing:border-box">Ver opções de acesso</a>
           <div class="recebe-card-guarantee">✓ Garantia de 7 dias</div>
         </div>
       </div>
@@ -1098,7 +1098,7 @@ section[id]{scroll-margin-top:80px}
         <a href="https://pay.voompcreators.com.br/15302/offer/62DKCf" target="_blank" class="ofer-btn" style="border-color:#8A6B3A">Quero os Scripts por R$17</a>
       </div>
       <div class="preco-card featured">
-        <span class="ofer-badge">Mais completo</span>
+        <span class="ofer-badge">★ Recomendado</span>
         <div class="preco-tag">Kit Completo</div>
         <div class="preco-name">Reativação e Fidelização</div>
         <ul class="preco-list">
