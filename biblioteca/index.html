@@ -856,8 +856,6 @@ function BibliotecaCORE(){
   const [brandProfile,setBrandProfile] = useState(()=>{try{return {...DEFAULT_BRAND_PROFILE,...JSON.parse(localStorage.getItem("coreBrandProfile")||"{}")} }catch(e){return DEFAULT_BRAND_PROFILE;}});
   const [activeTab,setActiveTab] = useState("legenda");
   const [copyMsg,setCopyMsg] = useState("");
-  const [detailedPrompt,setDetailedPrompt] = useState("");
-  const [loadingPrompt,setLoadingPrompt] = useState(false);
   const previewRef = useRef(null);
 
   useEffect(()=>{localStorage.setItem("coreBrandProfile",JSON.stringify(brandProfile));},[brandProfile]);
@@ -926,16 +924,6 @@ function BibliotecaCORE(){
     setTplFields(init);
     setVisualItems([]);
     setSelectedVisualItem(null);
-  };
-
-  const handleGerarPrompt=async()=>{
-    setLoadingPrompt(true);
-    setDetailedPrompt("");
-    const strategic=STRATEGIC.find(s=>s.id===openContent?.id);
-    const content=CONTENT[openContent?.id];
-    const result=await gerarPromptDetalhado(strategic||openContent,content);
-    setDetailedPrompt(result);
-    setLoadingPrompt(false);
   };
 
   if(!authed) return <Login code={code} setCode={setCode} err={codeErr} onLogin={handleLogin}/>;
@@ -1037,43 +1025,25 @@ function BibliotecaCORE(){
 
       {/* MODAL: Content */}
       {openContent&&CONTENT[openContent.id]&&(
-        <Modal onClose={()=>{setOpenContent(null);setDetailedPrompt("");}} wide>
+        <Modal onClose={()=>setOpenContent(null)} wide>
           <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:14}}>
             <PillarBadge pilar={openContent.pilar}/>
             <h2 style={{margin:0,fontSize:18,color:BRAND.creme}}>{openContent.tema}</h2>
           </div>
           <div style={{display:"flex",gap:6,marginBottom:18,flexWrap:"wrap"}}>
             {[["legenda","📝 Legenda"],["carrossel","🎠 Carrossel"],["reels","🎬 Reels"],["stories","📱 Stories"],["whatsapp","💬 WhatsApp"],["prompt","🤖 Prompt"]].map(([k,l])=>(
-              <button key={k} onClick={()=>{setActiveTab(k);if(k==="prompt")setDetailedPrompt("");}} style={{background:activeTab===k?BRAND.dourado:"rgba(255,255,255,0.07)",color:activeTab===k?BRAND.azul:BRAND.cinza,border:"none",borderRadius:20,padding:isMobile?"8px 12px":"6px 14px",fontSize:isMobile?11:12,fontWeight:600,cursor:"pointer",transition:"all .15s"}}>{l}</button>
+              <button key={k} onClick={()=>setActiveTab(k)} style={{background:activeTab===k?BRAND.dourado:"rgba(255,255,255,0.07)",color:activeTab===k?BRAND.azul:BRAND.cinza,border:"none",borderRadius:20,padding:isMobile?"8px 12px":"6px 14px",fontSize:isMobile?11:12,fontWeight:600,cursor:"pointer",transition:"all .15s"}}>{l}</button>
             ))}
           </div>
 
           {activeTab==="prompt" ? (
             <div>
-              <div style={{background:"rgba(255,255,255,0.05)",borderRadius:10,padding:16,fontSize:13,lineHeight:1.7,color:BRAND.creme,border:"1px solid rgba(255,255,255,0.08)",marginBottom:12,minHeight:80}}>
-                <div style={{fontSize:11,color:BRAND.cinza,marginBottom:8}}>PROMPT BASE (do documento)</div>
+              <div style={{background:"rgba(255,255,255,0.05)",borderRadius:10,padding:16,fontSize:13,lineHeight:1.7,color:BRAND.creme,border:"1px solid rgba(255,255,255,0.08)",marginBottom:12,minHeight:80,whiteSpace:"pre-line"}}>
                 {CONTENT[openContent.id].prompt||"—"}
               </div>
-              {!detailedPrompt && !loadingPrompt && (
-                <button onClick={handleGerarPrompt} style={{background:BRAND.dourado,color:BRAND.azul,border:"none",borderRadius:8,padding:"11px 20px",fontWeight:700,cursor:"pointer",fontSize:13,width:"100%"}}>
-                  ✨ Gerar Prompt Detalhado com IA
-                </button>
-              )}
-              {loadingPrompt && (
-                <div style={{textAlign:"center",padding:24,color:BRAND.cinza,fontSize:13}}>Gerando prompt detalhado... ⏳</div>
-              )}
-              {detailedPrompt && (
-                <div>
-                  <div style={{fontSize:11,color:BRAND.dourado,fontWeight:700,marginBottom:8,letterSpacing:.5}}>✨ PROMPT DETALHADO GERADO</div>
-                  <div style={{background:"rgba(200,166,106,0.07)",borderRadius:10,padding:16,fontSize:13,lineHeight:1.75,color:BRAND.creme,border:`1px solid ${BRAND.dourado}30`,whiteSpace:"pre-line",marginBottom:12,maxHeight:320,overflowY:"auto"}}>
-                    {detailedPrompt}
-                  </div>
-                  <div style={{display:"flex",gap:8}}>
-                    <button onClick={()=>copy(detailedPrompt,"Prompt detalhado")} style={{background:BRAND.dourado,color:BRAND.azul,border:"none",borderRadius:8,padding:"9px 16px",fontWeight:700,cursor:"pointer",fontSize:12,flex:1}}>📋 Copiar Prompt</button>
-                    <button onClick={()=>{setDetailedPrompt("");handleGerarPrompt();}} style={{background:"rgba(255,255,255,0.08)",color:BRAND.cinza,border:"1px solid rgba(255,255,255,0.15)",borderRadius:8,padding:"9px 16px",cursor:"pointer",fontSize:12}}>↺ Regerar</button>
-                  </div>
-                </div>
-              )}
+              <button onClick={()=>copy(CONTENT[openContent.id].prompt||"","Prompt")} style={{background:BRAND.dourado,color:BRAND.azul,border:"none",borderRadius:8,padding:"10px 16px",fontWeight:700,cursor:"pointer",fontSize:13,width:"100%"}}>
+                📋 Copiar Prompt
+              </button>
             </div>
           ) : (
             <div>
@@ -1125,7 +1095,6 @@ function BibliotecaCORE(){
                   const t=TEMPLATES.find(x=>x.id===tId);
                   if(t){
                     setOpenContent(null);
-                    setDetailedPrompt("");
                     setOpenTemplate(t);
                     setTplFields(fields);
                     setPage("templates");
