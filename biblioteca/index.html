@@ -976,6 +976,52 @@ function BibliotecaCORE(){
         )}
       </main>
 
+      {/* FOOTER */}
+      <footer style={{background:BRAND.azulAcin,borderTop:`1px solid rgba(200,166,106,0.15)`,padding:isMobile?"32px 20px 24px":"48px 40px 32px",marginTop:"auto"}}>
+        <div style={{maxWidth:960,margin:"0 auto"}}>
+          <div style={{display:"grid",gridTemplateColumns:isMobile?"1fr":"1fr 1fr 1fr",gap:isMobile?32:48,marginBottom:40}}>
+            <div>
+              <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
+                <OrbIcon size={22}/>
+                <span style={{fontWeight:700,fontSize:13,letterSpacing:2,color:BRAND.creme}}>BIBLIOTECA CORE</span>
+              </div>
+              <p style={{fontSize:12,color:BRAND.cinza,lineHeight:1.7,margin:0}}>Mais de 700 conteúdos prontos para ajudar clínicas a fortalecer o marketing, melhorar o relacionamento com pacientes e produzir conteúdo com mais estratégia.</p>
+            </div>
+            <div style={{textAlign:isMobile?"left":"left"}}>
+              <div style={{fontWeight:700,fontSize:11,letterSpacing:2,color:BRAND.dourado,marginBottom:14,textTransform:"uppercase"}}>Links rápidos</div>
+              {[["Biblioteca Estratégica","strategic"],["Biblioteca de Conteúdo","content"],["Templates","templates"]].map(([label,tab])=>(
+                <div key={tab} style={{marginBottom:10}}>
+                  <span
+                    onClick={()=>setActiveSection(tab)}
+                    style={{fontSize:12,color:BRAND.cinza,cursor:"pointer",textDecoration:"none",borderBottom:`1px solid transparent`,transition:"color .2s",padding:"2px 0"}}
+                    onMouseEnter={e=>e.target.style.color=BRAND.dourado}
+                    onMouseLeave={e=>e.target.style.color=BRAND.cinza}
+                  >{label}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{textAlign:isMobile?"left":"left"}}>
+              <div style={{fontWeight:700,fontSize:11,letterSpacing:2,color:BRAND.dourado,marginBottom:14,textTransform:"uppercase"}}>Suporte</div>
+              <p style={{fontSize:12,color:BRAND.creme,fontWeight:600,margin:"0 0 10px"}}>Daniel Palhano</p>
+              <a href="https://www.danielpalhano.com.br" target="_blank" rel="noreferrer" style={{display:"block",fontSize:12,color:BRAND.cinza,textDecoration:"none",marginBottom:8}}
+                onMouseEnter={e=>e.target.style.color=BRAND.dourado}
+                onMouseLeave={e=>e.target.style.color=BRAND.cinza}>
+                🌐 danielpalhano.com.br
+              </a>
+              <a href="mailto:contato@danielpalhano.com.br" style={{display:"block",fontSize:12,color:BRAND.cinza,textDecoration:"none"}}
+                onMouseEnter={e=>e.target.style.color=BRAND.dourado}
+                onMouseLeave={e=>e.target.style.color=BRAND.cinza}>
+                📧 contato@danielpalhano.com.br
+              </a>
+            </div>
+          </div>
+          <div style={{borderTop:`1px solid rgba(200,166,106,0.12)`,paddingTop:20,display:"flex",justifyContent:isMobile?"center":"space-between",alignItems:"center",flexDirection:isMobile?"column":"row",gap:8}}>
+            <span style={{fontSize:11,color:"rgba(200,166,106,0.4)"}}>© 2026 Daniel Palhano. Todos os direitos reservados.</span>
+            <span style={{fontSize:11,color:"rgba(200,166,106,0.3)"}}>Biblioteca CORE • Versão 1.0</span>
+          </div>
+        </div>
+      </footer>
+
       {/* MODAL: Strategic */}
       {openItem&&(
         <Modal onClose={()=>setOpenItem(null)}>
