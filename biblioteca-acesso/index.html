@@ -28,6 +28,18 @@ html{scroll-behavior:smooth}
 body{background:var(--azul);color:var(--txt);font-family:var(--fi);overflow-x:hidden;font-size:16px;line-height:1.6}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.4}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.fmt-pill{display:inline-block;background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m);animation:pillGlow 3.6s ease-in-out infinite}
+@keyframes pillGlow{
+  0%,84%,100%{background:var(--azul-card);border-color:var(--azul-border-gold);color:var(--txt-m);transform:scale(1)}
+  8%{background:var(--dourado);border-color:var(--dourado);color:var(--azul);transform:scale(1.08)}
+}
+@media(prefers-reduced-motion:reduce){.fmt-pill{animation:none}}
+.glow-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:14px 8px;text-align:center;color:var(--txt);animation:cardGlow 3s ease-in-out infinite}
+@keyframes cardGlow{
+  0%,84%,100%{background:var(--azul-card);border-color:var(--azul-border);transform:scale(1)}
+  8%{background:var(--dourado);border-color:var(--dourado);transform:scale(1.06)}
+}
+@media(prefers-reduced-motion:reduce){.glow-card{animation:none}}
 .reveal.visible{opacity:1;transform:none}
 .reveal.from-left{transform:translateX(-24px)}.reveal.from-left.visible{transform:none}
 .reveal.from-right{transform:translateX(24px)}.reveal.from-right.visible{transform:none}
@@ -885,18 +897,18 @@ section[id]{scroll-margin-top:80px}
 <section class="s-mhero">
   <div class="wrap">
     <div class="mhero-eyebrow reveal">Conteúdo pronto pra clínica</div>
-    <div class="reveal" style="font-family:var(--fm);font-weight:600;font-size:clamp(90px,16vw,180px);line-height:0.9;color:var(--dourado-bright);margin:8px 0 0">700+</div>
+    <div class="reveal count-up" data-target="700" data-suffix="+" style="font-family:var(--fm);font-weight:600;font-size:clamp(90px,16vw,180px);line-height:0.9;color:var(--dourado-bright);margin:8px 0 0">0+</div>
     <h1 class="mhero-title reveal" style="margin-top:4px">conteúdos prontos <em>pra sua clínica.</em></h1>
     <p class="mhero-sub reveal">Legendas, carrosséis, reels, stories, WhatsApp, templates e prompts — organizados nos 4 pilares do Método Órbita CORE. Copie, cole e adapte.</p>
 
     <div class="reveal" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:640px;margin:28px auto 0">
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m)">📝 Legendas</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m)">🎠 Carrosséis</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m)">🎬 Reels</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m)">📱 Stories</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m)">💬 WhatsApp</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m)">🎨 Templates</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:8px 16px;font-size:12px;color:var(--txt-m)">🤖 Prompts</span>
+      <span class="fmt-pill" style="animation-delay:0s">📝 Legendas</span>
+      <span class="fmt-pill" style="animation-delay:0.3s">🎠 Carrosséis</span>
+      <span class="fmt-pill" style="animation-delay:0.6s">🎬 Reels</span>
+      <span class="fmt-pill" style="animation-delay:0.9s">📱 Stories</span>
+      <span class="fmt-pill" style="animation-delay:1.2s">💬 WhatsApp</span>
+      <span class="fmt-pill" style="animation-delay:1.5s">🎨 Templates</span>
+      <span class="fmt-pill" style="animation-delay:1.8s">🤖 Prompts</span>
     </div>
 
     <p class="mhero-reinforce reveal">Nunca mais fique sem saber o que publicar na sua clínica.</p>
@@ -1006,48 +1018,48 @@ section[id]{scroll-margin-top:80px}
       <p class="sec-sub" style="margin-top:14px">Mais de 700 conteúdos já escritos. Você só escolhe o tema e adapta.</p>
     </div>
     <div class="reveal" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:760px;margin:36px auto 0">
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Fidelização</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Atendimento</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Primeira consulta</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Retorno</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Pós-venda</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Humanização</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ WhatsApp</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Confirmação</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Captação</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Marketing</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Experiência</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Indicação</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Reels</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Stories</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Carrosséis</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Autoridade</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Encantamento</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Reclamações</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Recepção</span>
-      <span style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:20px;padding:9px 18px;font-size:13px;color:var(--txt-m)">✔ Agenda</span>
+      <span class="fmt-pill" style="animation-delay:0.0s">✔ Fidelização</span>
+      <span class="fmt-pill" style="animation-delay:0.15s">✔ Atendimento</span>
+      <span class="fmt-pill" style="animation-delay:0.3s">✔ Primeira consulta</span>
+      <span class="fmt-pill" style="animation-delay:0.45s">✔ Retorno</span>
+      <span class="fmt-pill" style="animation-delay:0.6s">✔ Pós-venda</span>
+      <span class="fmt-pill" style="animation-delay:0.75s">✔ Humanização</span>
+      <span class="fmt-pill" style="animation-delay:0.9s">✔ WhatsApp</span>
+      <span class="fmt-pill" style="animation-delay:1.05s">✔ Confirmação</span>
+      <span class="fmt-pill" style="animation-delay:1.2s">✔ Captação</span>
+      <span class="fmt-pill" style="animation-delay:1.35s">✔ Marketing</span>
+      <span class="fmt-pill" style="animation-delay:1.5s">✔ Experiência</span>
+      <span class="fmt-pill" style="animation-delay:1.65s">✔ Indicação</span>
+      <span class="fmt-pill" style="animation-delay:1.8s">✔ Reels</span>
+      <span class="fmt-pill" style="animation-delay:1.95s">✔ Stories</span>
+      <span class="fmt-pill" style="animation-delay:2.1s">✔ Carrosséis</span>
+      <span class="fmt-pill" style="animation-delay:2.25s">✔ Autoridade</span>
+      <span class="fmt-pill" style="animation-delay:2.4s">✔ Encantamento</span>
+      <span class="fmt-pill" style="animation-delay:2.55s">✔ Reclamações</span>
+      <span class="fmt-pill" style="animation-delay:2.7s">✔ Recepção</span>
+      <span class="fmt-pill" style="animation-delay:2.85s">✔ Agenda</span>
     </div>
 
     <!-- Bloco de numeros -->
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:48px 0 24px" class="reveal mobile-stack">
       <div style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:10px;padding:20px 10px;text-align:center">
-        <div style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">700+</div>
+        <div class="count-up" data-target="700" data-suffix="+" style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">0+</div>
         <div style="font-size:11px;color:var(--txt-m);margin-top:4px">Conteúdos</div>
       </div>
       <div style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:10px;padding:20px 10px;text-align:center">
-        <div style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">100</div>
+        <div class="count-up" data-target="100" style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">0</div>
         <div style="font-size:11px;color:var(--txt-m);margin-top:4px">Temas</div>
       </div>
       <div style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:10px;padding:20px 10px;text-align:center">
-        <div style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">20</div>
+        <div class="count-up" data-target="20" style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">0</div>
         <div style="font-size:11px;color:var(--txt-m);margin-top:4px">Templates</div>
       </div>
       <div style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:10px;padding:20px 10px;text-align:center">
-        <div style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">6</div>
+        <div class="count-up" data-target="6" style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">0</div>
         <div style="font-size:11px;color:var(--txt-m);margin-top:4px">Formatos</div>
       </div>
       <div style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:10px;padding:20px 10px;text-align:center">
-        <div style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">4</div>
+        <div class="count-up" data-target="4" style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">0</div>
         <div style="font-size:11px;color:var(--txt-m);margin-top:4px">Pilares</div>
       </div>
     </div>
@@ -1095,29 +1107,29 @@ section[id]{scroll-margin-top:80px}
     <div class="reveal" style="margin-top:56px">
       <div style="text-align:center;font-size:13px;color:var(--txt-d);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px">Um tema. Todos os formatos prontos.</div>
       <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px" class="mobile-grid">
-        <div style="background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:14px 8px;text-align:center">
+        <div class="glow-card" style="animation-delay:0s">
           <div style="font-size:16px">📝</div>
-          <div style="font-size:10px;color:var(--txt);font-weight:700;margin-top:6px">Legenda</div>
+          <div style="font-size:10px;font-weight:700;margin-top:6px">Legenda</div>
         </div>
-        <div style="background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:14px 8px;text-align:center">
+        <div class="glow-card" style="animation-delay:0.5s">
           <div style="font-size:16px">🎠</div>
-          <div style="font-size:10px;color:var(--txt);font-weight:700;margin-top:6px">Carrossel</div>
+          <div style="font-size:10px;font-weight:700;margin-top:6px">Carrossel</div>
         </div>
-        <div style="background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:14px 8px;text-align:center">
+        <div class="glow-card" style="animation-delay:1s">
           <div style="font-size:16px">🎬</div>
-          <div style="font-size:10px;color:var(--txt);font-weight:700;margin-top:6px">Reels</div>
+          <div style="font-size:10px;font-weight:700;margin-top:6px">Reels</div>
         </div>
-        <div style="background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:14px 8px;text-align:center">
+        <div class="glow-card" style="animation-delay:1.5s">
           <div style="font-size:16px">📱</div>
-          <div style="font-size:10px;color:var(--txt);font-weight:700;margin-top:6px">Stories</div>
+          <div style="font-size:10px;font-weight:700;margin-top:6px">Stories</div>
         </div>
-        <div style="background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:14px 8px;text-align:center">
+        <div class="glow-card" style="animation-delay:2s">
           <div style="font-size:16px">💬</div>
-          <div style="font-size:10px;color:var(--txt);font-weight:700;margin-top:6px">WhatsApp</div>
+          <div style="font-size:10px;font-weight:700;margin-top:6px">WhatsApp</div>
         </div>
-        <div style="background:var(--azul-card);border:1px solid var(--azul-border);border-radius:10px;padding:14px 8px;text-align:center">
+        <div class="glow-card" style="animation-delay:2.5s">
           <div style="font-size:16px">🤖</div>
-          <div style="font-size:10px;color:var(--txt);font-weight:700;margin-top:6px">Prompt</div>
+          <div style="font-size:10px;font-weight:700;margin-top:6px">Prompt</div>
         </div>
       </div>
       <div style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:10px;padding:18px;margin-top:14px;font-size:13px;color:var(--txt-m);line-height:1.7;text-align:center">
@@ -1315,6 +1327,7 @@ section[id]{scroll-margin-top:80px}
           <li class="on">Legenda, carrossel, reels, stories e WhatsApp</li>
           <li class="on">Mais de 20 templates editáveis (exportação PNG)</li>
           <li class="on">Busca por tema e por pilar</li>
+          <li class="on">Novos conteúdos são adicionados com o tempo — no mesmo acesso, sem custo extra</li>
         </ul>
         <div class="preco-price-wrap">
           <div class="preco-inv">Em até</div>
@@ -1326,7 +1339,7 @@ section[id]{scroll-margin-top:80px}
         <a href="https://pay.voompcreators.com.br/15648" target="_blank" class="ofer-btn">Quero acesso à Biblioteca por 12x de R$3,90</a>
       </div>
     </div>
-    <p class="preco-foot reveal">Garantia de 7 dias. Se não gostar, devolvemos 100%. Acesso liberado por código, enviado após o pagamento.</p>
+    <p class="preco-foot reveal">Garantia de 7 dias. Se não gostar, devolvemos 100%. Acesso liberado por código, enviado após o pagamento. Novas atualizações e conteúdos entram na Biblioteca com o tempo — se você já comprou, elas ficam liberadas no seu acesso, sem pagar de novo.</p>
 
     <div class="preco-bridge reveal">
       <p>Já sabe que precisa de ajuda pra implementar a estratégia toda, não só o conteúdo?</p>
@@ -1372,5 +1385,32 @@ var rO=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isInterse
 document.querySelectorAll(".reveal").forEach(function(el){rO.observe(el)});
 document.getElementById("hamburger").addEventListener("click",function(){document.getElementById("nav-mobile").classList.toggle("open")});
 document.querySelectorAll(".nav-mobile .nav-link").forEach(function(l){l.addEventListener("click",function(){document.getElementById("nav-mobile").classList.remove("open")})});
+
+function animateCount(el){
+  var target=parseInt(el.getAttribute("data-target"),10);
+  var suffix=el.getAttribute("data-suffix")||"";
+  var dur=1400;
+  var start=null;
+  function step(ts){
+    if(!start)start=ts;
+    var p=Math.min((ts-start)/dur,1);
+    var eased=1-Math.pow(1-p,3);
+    var val=Math.floor(eased*target);
+    el.textContent=val+suffix;
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target+suffix;
+  }
+  requestAnimationFrame(step);
+}
+var countEls=document.querySelectorAll(".count-up");
+var cO=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      animateCount(entry.target);
+      cO.unobserve(entry.target);
+    }
+  });
+},{threshold:.4});
+countEls.forEach(function(el){cO.observe(el)});
 </script>
 </html>
