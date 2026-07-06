@@ -1221,7 +1221,8 @@ function Login({code,setCode,err,onLogin}){
         <input value={code} onChange={e=>setCode(e.target.value)} onKeyDown={e=>e.key==="Enter"&&onLogin()} placeholder="Digite seu código de acesso" type="password" style={{width:"100%",background:"rgba(255,255,255,0.07)",border:`1px solid ${err?"#e74c3c":"rgba(255,255,255,0.15)"}`,borderRadius:8,padding:"11px 14px",color:BRAND.creme,fontSize:14,boxSizing:"border-box",transition:"border .2s"}}/>
         {err&&<p style={{color:"#e74c3c",fontSize:12,margin:"6px 0 0"}}>Código inválido.</p>}
         <button onClick={onLogin} style={{marginTop:16,width:"100%",background:BRAND.dourado,color:BRAND.azul,border:"none",borderRadius:8,padding:12,fontWeight:700,fontSize:14,cursor:"pointer",letterSpacing:.5}}>ACESSAR →</button>
-        <p style={{fontSize:11,color:"rgba(200,166,106,0.4)",marginTop:20}}>Código: {ACCESS_CODE}</p>
+        <p style={{fontSize:11,color:"rgba(200,166,106,0.5)",marginTop:20}}>Código enviado por e-mail no momento da compra</p>
+        <a href="mailto:contato@danielpalhano.com.br?subject=Esqueci meu código de acesso - Biblioteca CORE&body=Olá, comprei o acesso à Biblioteca CORE e esqueci meu código. Meu e-mail de compra é: " style={{fontSize:11,color:BRAND.dourado,textDecoration:"underline",display:"block",marginTop:6}}>Esqueci meu código</a>
       </div>
     </div>
   );
