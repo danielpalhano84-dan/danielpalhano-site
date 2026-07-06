@@ -757,6 +757,45 @@ section[id]{scroll-margin-top:80px}
   .hero-mockup{transform:scale(.76);margin:20px auto 8px;gap:8px}
 }
 
+/* Mobile stack/grid pra todas as novas secoes */
+@media(max-width:640px){
+  .mobile-stack{grid-template-columns:1fr !important}
+  .mobile-grid{grid-template-columns:repeat(3,1fr) !important}
+  .fmt-pill{padding:6px 12px;font-size:11px}
+}
+@media(max-width:400px){
+  .mobile-grid{grid-template-columns:repeat(2,1fr) !important}
+}
+
+/* Hero 700+ menor no mobile */
+@media(max-width:480px){
+  .hero-700{font-size:clamp(72px,20vw,120px) !important}
+}
+
+/* Mockup do hero no mobile: empilha e reduz */
+@media(max-width:640px){
+  .hero-device-wrap{max-width:100% !important;padding:0 16px !important}
+  .hero-device-wrap > div:first-child{width:100% !important}
+}
+
+/* Galeria: 2 colunas em tablet, 1 em mobile */
+@media(max-width:760px){
+  .s-galeria .galeria-duo{grid-template-columns:1fr !important}
+}
+
+/* Antes/depois: 1 coluna */
+@media(max-width:640px){
+  .s-antesdepois .ad-cols{grid-template-columns:1fr !important}
+}
+
+/* Abundancia: numeros em 3 colunas no mobile */
+@media(max-width:540px){
+  .abund-nums{grid-template-columns:repeat(3,1fr) !important}
+}
+@media(max-width:360px){
+  .abund-nums{grid-template-columns:repeat(2,1fr) !important}
+}
+
 /* ===== PROBLEMA ===== */
 .s-problema{padding:60px 0 90px}
 .problema-head{max-width:680px;margin:0 auto 44px;text-align:center}
@@ -897,7 +936,7 @@ section[id]{scroll-margin-top:80px}
 <section class="s-mhero">
   <div class="wrap">
     <div class="mhero-eyebrow reveal">Conteúdo pronto pra clínica</div>
-    <div class="reveal count-up" data-target="700" data-suffix="+" style="font-family:var(--fm);font-weight:600;font-size:clamp(90px,16vw,180px);line-height:0.9;color:var(--dourado-bright);margin:8px 0 0">0+</div>
+    <div class="reveal count-up" data-target="700" data-suffix="+" style="font-family:var(--fm);font-weight:600;font-size:clamp(90px,16vw,180px);line-height:0.9;color:var(--dourado-bright);margin:8px 0 0" class="hero-700 count-up" data-target="700" data-suffix="+">0+</div>
     <h1 class="mhero-title reveal" style="margin-top:4px">conteúdos prontos <em>pra sua clínica.</em></h1>
     <p class="mhero-sub reveal">Legendas, carrosséis, reels, stories, WhatsApp, templates e prompts — organizados nos 4 pilares do Método Órbita CORE. Copie, cole e adapte.</p>
 
@@ -979,7 +1018,7 @@ section[id]{scroll-margin-top:80px}
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:20px" class="mobile-stack">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-bottom:20px" class="mobile-stack galeria-duo">
       <!-- Mockup: legenda pronta real -->
       <div class="reveal" style="background:#0D1B2A;border-radius:14px;border:1px solid rgba(200,166,106,0.25);padding:20px">
         <div style="color:#C8A66A;font-size:11px;font-weight:700;margin-bottom:10px;font-family:var(--fi)">📝 LEGENDA PRONTA — ENCANTAMENTO</div>
@@ -1041,7 +1080,7 @@ section[id]{scroll-margin-top:80px}
     </div>
 
     <!-- Bloco de numeros -->
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:48px 0 24px" class="reveal mobile-stack">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:48px 0 24px" class="reveal mobile-stack abund-nums">
       <div style="background:var(--azul-card);border:1px solid var(--azul-border-gold);border-radius:10px;padding:20px 10px;text-align:center">
         <div class="count-up" data-target="700" data-suffix="+" style="font-family:var(--fm);font-size:28px;color:var(--dourado-bright)">0+</div>
         <div style="font-size:11px;color:var(--txt-m);margin-top:4px">Conteúdos</div>
@@ -1080,7 +1119,7 @@ section[id]{scroll-margin-top:80px}
       <div class="eyebrow">Como Funciona Na Prática</div>
       <h2 class="sec-title">De travado a publicado <em>em poucos minutos</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:40px 0" class="reveal mobile-stack">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:40px 0" class="reveal mobile-stack ad-cols">
       <div style="background:var(--azul-card);border:1px solid var(--azul-border);border-radius:12px;padding:24px">
         <div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--txt-d);margin-bottom:16px">ANTES</div>
         <div style="display:flex;flex-direction:column;gap:10px">
@@ -1213,7 +1252,7 @@ section[id]{scroll-margin-top:80px}
           <div class="recebe-card-tag">Resumo da Biblioteca</div>
           <div class="recebe-card-title">Biblioteca<br>Órbita CORE</div>
           <p class="recebe-card-desc">700+ conteúdos, 4 pilares, todos os formatos e templates editáveis.</p>
-          <a href="#preco" class="btn-primary" style="width:100%;justify-content:center;box-sizing:border-box">Ver acesso por 12x de R$3,90</a>
+          <a href="#preco" class="btn-primary" style="width:100%;justify-content:center;box-sizing:border-box">Ver acesso por 12x de R$4,70</a>
           <div class="recebe-card-guarantee">✓ Garantia de 7 dias</div>
         </div>
       </div>
@@ -1331,12 +1370,13 @@ section[id]{scroll-margin-top:80px}
         </ul>
         <div class="preco-price-wrap">
           <div class="preco-inv">Em até</div>
-          <div class="preco-price">12x de R$3,90</div>
+          <div class="preco-price">12x de R$4,70</div>
           <div style="color:var(--txt-m);font-size:13px;margin-top:6px">ou R$47 à vista · Pix, cartão ou boleto</div>
+          <div style="color:var(--txt-d);font-size:10px;margin-top:2px">*Valor parcelado possui acréscimo de juros</div>
           <div class="preco-guarantee">✓ Garantia de 7 dias</div>
           <div style="color:var(--txt-d);font-size:11px;margin-top:10px;line-height:1.5">Compra única. Sem mensalidade, sem renovação automática — acesso é seu, sem prazo.</div>
         </div>
-        <a href="https://pay.voompcreators.com.br/15657" target="_blank" class="ofer-btn">Quero acesso à Biblioteca por 12x de R$3,90</a>
+        <a href="https://pay.voompcreators.com.br/15657" target="_blank" class="ofer-btn">Quero acesso à Biblioteca por 12x de R$4,70</a>
       </div>
     </div>
     <p class="preco-foot reveal">Garantia de 7 dias. Se não gostar, devolvemos 100%. Acesso liberado por código, enviado após o pagamento. Novas atualizações e conteúdos entram na Biblioteca com o tempo — se você já comprou, elas ficam liberadas no seu acesso, sem pagar de novo.</p>
