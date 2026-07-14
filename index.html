@@ -666,13 +666,14 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 <style>
 .s-positioning{padding:100px 0 96px;position:relative;overflow:hidden}
 .pos-wrap{max-width:1080px;margin:0 auto;padding:0 40px}
-.pos-hero-row{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center;margin-bottom:72px}
+.pos-hero-row{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;margin-bottom:72px}
 .pos-text{display:flex;flex-direction:column;gap:20px}
 .pos-eyebrow{font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--dourado);margin-bottom:0}
 .pos-title{font-family:var(--fm);font-size:clamp(26px,3.6vw,42px);font-weight:200;line-height:1.12;color:var(--txt)}
 .pos-title em{font-style:italic;color:var(--dourado-bright)}
-.pos-desc{font-size:15.5px;line-height:1.8;color:var(--txt-m);max-width:420px}
-.pos-video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#1E2A3A;box-shadow:0 24px 64px rgba(30,42,58,.18)}
+.pos-desc{font-size:15.5px;line-height:1.8;color:var(--txt-m);max-width:440px}
+.pos-video-col{display:flex;justify-content:center;align-items:center}
+.pos-video-frame{position:relative;width:100%;max-width:320px;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#1E2A3A;box-shadow:0 28px 72px rgba(30,42,58,.22)}
 .pos-video-frame video{width:100%;height:100%;display:block;object-fit:cover}
 .pos-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .pos-pillar{padding:28px 22px;border-radius:8px;background:rgba(30,42,58,.035);border:1px solid rgba(30,42,58,.08);transition:.3s ease}
@@ -681,14 +682,16 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .pos-pillar-name{font-family:var(--fm);font-size:16px;font-weight:300;color:var(--txt);margin-bottom:8px;line-height:1.25}
 .pos-pillar-desc{font-size:13px;line-height:1.65;color:var(--txt-m)}
 @media(max-width:860px){
-  .pos-hero-row{grid-template-columns:1fr;gap:36px}
+  .pos-hero-row{grid-template-columns:1fr;gap:40px}
   .pos-desc{max-width:100%}
   .pos-pillars{grid-template-columns:1fr 1fr;gap:16px}
+  .pos-video-frame{max-width:280px}
 }
 @media(max-width:540px){
   .pos-pillars{grid-template-columns:1fr}
   .s-positioning{padding:72px 0 64px}
   .pos-hero-row{margin-bottom:52px}
+  .pos-video-frame{max-width:260px}
 }
 </style>
   <div class="pos-wrap">
@@ -698,10 +701,12 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <h2 class="pos-title">Transformando a experiência do cliente em <em>vantagem competitiva.</em></h2>
         <p class="pos-desc">Diagnóstico, estratégia e implementação para empresas que querem reter mais clientes, aumentar a recompra e construir lealdade de forma sustentável.</p>
       </div>
-      <div class="pos-video-frame reveal from-right">
-        <video controls preload="metadata" playsinline poster="">
-          <source src="/assets/videos/video-institucional.mp4" type="video/mp4">
-        </video>
+      <div class="pos-video-col reveal from-right">
+        <div class="pos-video-frame">
+          <video controls preload="metadata" playsinline poster="">
+            <source src="/assets/videos/video-institucional.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
     <div class="pos-pillars reveal">
