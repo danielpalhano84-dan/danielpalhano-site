@@ -720,12 +720,29 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
         <p class="pos-desc">Diagnóstico, estratégia e implementação para empresas que querem reter mais clientes, aumentar a recompra e construir lealdade de forma sustentável.</p>
       </div>
       <div class="pos-video-col reveal from-right">
-        <div class="pos-video-frame">
-          <video controls preload="metadata" playsinline poster="/assets/images/poster-video.jpg">
+        <div class="pos-video-frame" id="videoWrapper">
+          <div id="videoThumb" onclick="playVideo()" style="position:absolute;inset:0;cursor:pointer;z-index:2;">
+            <img src="/assets/images/poster-video.jpg" alt="Daniel Palhano" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+            <div style="position:absolute;inset:0;background:rgba(13,27,42,0.35);display:flex;align-items:center;justify-content:center;">
+              <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.35);">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="#0D1B2A"><polygon points="6,4 20,12 6,20"/></svg>
+              </div>
+            </div>
+          </div>
+          <video id="mainVideo" controls playsinline style="width:100%;height:100%;display:none;object-fit:cover;object-position:center 20%;">
             <source src="/assets/videos/video-institucional.mp4" type="video/mp4">
           </video>
         </div>
       </div>
+      <script>
+        function playVideo(){
+          var thumb=document.getElementById('videoThumb');
+          var video=document.getElementById('mainVideo');
+          thumb.style.display='none';
+          video.style.display='block';
+          video.play();
+        }
+      </script>
     </div>
     <div class="pos-pillars reveal">
       <div class="pos-pillar">
