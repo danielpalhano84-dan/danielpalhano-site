@@ -140,9 +140,9 @@ section[id]{scroll-margin-top:72px}
 .hero-actions{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:28px}
 .hero-guarantee{font-size:13px;color:var(--dourado-bright);display:flex;align-items:center;gap:6px;justify-content:center}
 .hero-guarantee svg{width:16px;height:16px;flex-shrink:0}
-.hero-video{margin:24px auto;max-width:560px;text-align:center}
-.hero-video-inner{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--azul-border-gold);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.hero-video-player{width:100%;height:auto;display:block;border-radius:12px;background:#0D1B2A}
+.hero-video{margin:24px auto;max-width:320px;text-align:center}
+.hero-video-inner{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--azul-border-gold);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.hero-video-player{width:100%;height:auto;display:block;border-radius:16px;background:#0D1B2A}
 .hero-video-label{font-size:12px;color:var(--txt-d);margin-top:10px;font-style:italic}
 .hero-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:12px;color:var(--txt-d)}
 .hero-meta-item{display:flex;align-items:center;gap:6px}
@@ -394,7 +394,7 @@ section[id]{scroll-margin-top:72px}
   .preco-card{padding:24px 18px}
   .footer-grid{grid-template-columns:1fr}
   .btn-primary{padding:14px 24px;font-size:12px}
-  .hero-video{margin:16px auto;max-width:100%}
+  .hero-video{margin:16px auto;max-width:min(320px,85vw)}
   .hero-video-label{font-size:11px}
 }
 @media(max-width:400px){
@@ -475,7 +475,7 @@ section[id]{scroll-margin-top:72px}
     <!-- Video do Daniel -->
     <div class="hero-video reveal">
       <div class="hero-video-inner">
-        <video class="hero-video-player" controls preload="metadata" width="560" height="315" playsinline poster="/assets/poster-biblioteca.svg">
+        <video class="hero-video-player" controls preload="metadata" width="320" height="568" playsinline poster="/assets/poster-biblioteca.svg">
           <source src="/assets/WhatsApp%20Video%202026-07-30%20at%2014.15.11.mp4" type="video/mp4">
         </video>
         <div class="hero-video-label">🎬 Biblioteca Órbita CORE - veja como funciona</div>
