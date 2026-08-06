@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="315" viewBox="0 0 560 315">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E2B3A"/>
+      <stop offset="100%" stop-color="#0F1923"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#B89968" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#B89968" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="315" fill="url(#bg)"/>
+  <ellipse cx="280" cy="157" rx="180" ry="180" fill="url(#glow)"/>
+  <!-- rings -->
+  <circle cx="280" cy="157" r="120" fill="none" stroke="#B89968" stroke-width="0.5" opacity="0.2"/>
+  <circle cx="280" cy="157" r="90" fill="none" stroke="#B89968" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="280" cy="157" r="60" fill="none" stroke="#B89968" stroke-width="0.5" opacity="0.4"/>
+  <!-- play button outer -->
+  <circle cx="280" cy="157" r="44" fill="none" stroke="#B89968" stroke-width="2" opacity="0.6"/>
+  <!-- play triangle -->
+  <polygon points="280,124 280,190 340,157" fill="#B89968" opacity="0.85"/>
+  <!-- text -->
+  <text x="280" y="268" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#D4B87A" font-weight="600">Biblioteca Órbita CORE</text>
+  <text x="280" y="288" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#B89968" opacity="0.6">veja como funciona</text>
+</svg>
