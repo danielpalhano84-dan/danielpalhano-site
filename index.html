@@ -236,11 +236,24 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .core-header{text-align:center;margin-bottom:56px}
 .core-tagline{font-size:16px;color:var(--txt-m);max-width:600px;margin:20px auto 0;line-height:1.7;text-align:center}
 .core-grid-static{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px;max-width:880px;margin-left:auto;margin-right:auto}
-.core-static-card{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:var(--radius);padding:24px;transition:.3s var(--ease);cursor:pointer}
-.core-static-card:hover,.core-static-card.active{background:var(--hc);border-color:var(--hc)}
-.core-static-letter{width:38px;height:38px;line-height:38px;border-radius:50%;text-align:center;font-family:var(--fm);font-size:17px;color:#fff;margin-bottom:14px;transition:.3s var(--ease)}
-.core-static-name{font-family:var(--fm);font-size:18px;font-weight:300;color:var(--txt);margin-bottom:8px;transition:.3s var(--ease)}
-.core-static-desc{font-size:13.5px;color:var(--txt-m);line-height:1.6;transition:.3s var(--ease)}
+.core-static-card{
+  background:var(--azul-card);border:1px solid var(--azul-border);border-radius:12px;
+  padding:28px 24px;transition:.3s var(--ease);cursor:pointer;
+  display:grid;grid-template-rows:auto auto auto 1fr;gap:0;
+  min-height:200px;
+}
+.core-static-card:hover,.core-static-card.active{background:rgba(255,255,255,0.04);border-color:var(--hc)}
+.core-static-letter{
+  width:40px;height:40px;line-height:40px;border-radius:50%;text-align:center;
+  font-family:var(--fm);font-size:18px;font-weight:400;color:#fff;
+  margin-bottom:16px;transition:.3s var(--ease);flex-shrink:0;
+}
+.core-static-pillar-word{
+  font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--hc,var(--dourado));margin-bottom:6px;transition:.3s;
+}
+.core-static-name{font-family:var(--fm);font-size:20px;font-weight:300;color:var(--txt);margin-bottom:12px;line-height:1.2;transition:.3s var(--ease)}
+.core-static-desc{font-size:13.5px;color:var(--txt-m);line-height:1.65;transition:.3s var(--ease)}
 .core-static-card:hover .core-static-name,.core-static-card.active .core-static-name,.core-static-card:hover .core-static-desc,.core-static-card.active .core-static-desc{color:var(--hctxt)}
 .core-integrado-note{max-width:680px;margin:34px auto 0;text-align:center;font-size:14px;color:var(--txt-m);line-height:1.65;padding-bottom:80px}
 .core-integrado-note strong{color:var(--txt)}
@@ -640,13 +653,12 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
       </a>
       <div class="nav-links">
         <a href="#sobre" class="nav-link">Sobre</a>
-        <a href="#metodo" class="nav-link">Método Órbita CORE</a>
+        <a href="#metodo" class="nav-link">Método</a>
         <a href="#servicos" class="nav-link">Serviços</a>
         <a href="#projetos" class="nav-link">Projetos</a>
-        <a href="#cta" class="nav-link">Contato</a>
       </div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-      <a href="https://wa.me/5511987569970?text=Ol%C3%A1%2C%20Daniel%21%20Gostaria%20de%20conversar%20sobre%20o%20m%C3%A9todo%20%C3%93rbita%20CORE." target="_blank" class="nav-cta">Agendar conversa</a>
+      <a href="https://coreorbit.com.br/auth/login" target="_blank" class="nav-cta">Entrar na plataforma</a>
     </div>
     <div class="nav-mobile" id="nav-mobile">
       <a href="#sobre" class="nav-link">Sobre</a>
@@ -785,23 +797,27 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
     <div class="core-grid-static reveal">
     <div class="core-static-card" id="pilar-c" style="--hc:#028090;--hctxt:#fff">
       <div class="core-static-letter" style="background:#028090">C</div>
-      <div class="core-static-name">Compreensão do Cliente</div>
-      <p class="core-static-desc">Voz do cliente, NPS, CSAT, jornada real, dados qualitativos e quantitativos. O que ele sente, espera e onde se frustra.</p>
+      <div class="core-static-pillar-word" style="--hc:#028090">Compreensão</div>
+      <div class="core-static-name">do Cliente</div>
+      <p class="core-static-desc">Voz do cliente, NPS, CSAT, jornada real, dados qualitativos e quantitativos. O que ele sente, espera e onde se frustra — antes de tomar qualquer decisão.</p>
     </div>
     <div class="core-static-card" id="pilar-o" style="--hc:#1D5FA5;--hctxt:#fff">
       <div class="core-static-letter" style="background:#1D5FA5">O</div>
-      <div class="core-static-name">Operação e Excelência</div>
-      <p class="core-static-desc">Processos, SLAs, gargalos operacionais e falhas invisíveis da experiência. Integração entre departamentos.</p>
+      <div class="core-static-pillar-word" style="--hc:#1D5FA5">Operações</div>
+      <div class="core-static-name">e Excelência</div>
+      <p class="core-static-desc">Processos, SLAs, gargalos operacionais e falhas invisíveis da experiência. Integração entre departamentos e consistência na entrega.</p>
     </div>
     <div class="core-static-card" id="pilar-r" style="--hc:#1D9E75;--hctxt:#fff">
       <div class="core-static-letter" style="background:#1D9E75">R</div>
-      <div class="core-static-name">Relacionamento e Lealdade</div>
-      <p class="core-static-desc">Fidelização, CRM, recompra, recuperação de inativos, programas de relacionamento e LTV.</p>
+      <div class="core-static-pillar-word" style="--hc:#1D9E75">Relacionamento</div>
+      <div class="core-static-name">e Lealdade</div>
+      <p class="core-static-desc">Fidelização, CRM, recompra, recuperação de inativos, programas de relacionamento e LTV. O cliente que volta porque quer.</p>
     </div>
     <div class="core-static-card" id="pilar-e" style="--hc:#C9A84C;--hctxt:#141F2B">
       <div class="core-static-letter" style="background:#C9A84C;color:#141F2B">E</div>
-      <div class="core-static-name">Evolução da Experiência</div>
-      <p class="core-static-desc">Melhoria contínua, IA aplicada à experiência, automação e benchmarking. O futuro da experiência do seu cliente.</p>
+      <div class="core-static-pillar-word" style="--hc:#C9A84C">Evolução</div>
+      <div class="core-static-name">da Experiência</div>
+      <p class="core-static-desc">Melhoria contínua, IA aplicada à experiência, automação e benchmarking. A experiência que aprende, se adapta e avança.</p>
     </div>
   </div>
 
@@ -1164,7 +1180,7 @@ document.querySelectorAll('.pv-card').forEach(function(card){
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Daniel Palhano · Método Órbita CORE</span>
+      <span class="footer-copy">© 2025 Daniel Palhano · Método Órbita CORE™ · <a href="https://coreorbit.com.br" style="color:inherit;opacity:.6;text-decoration:none;">coreorbit.com.br</a></span>
       <span class="footer-copy">Todos os direitos reservados</span>
     </div>
   </div>
