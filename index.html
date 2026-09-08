@@ -54,21 +54,21 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .sec-sub{font-size:16px;color:var(--txt-m);line-height:1.75}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:200;background:rgba(245,240,232,.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(138,107,58,.18)}
+.nav{position:sticky;top:0;z-index:200;background:rgba(14,21,30,.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(184,153,104,.12)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:62px}
-.nav-brand{font-family:var(--fm);font-size:15px;font-weight:300;color:var(--txt);text-decoration:none;display:flex;align-items:center;gap:9px;flex-shrink:0}
+.nav-brand{font-family:var(--fm);font-size:15px;font-weight:300;color:#F5F0E8;text-decoration:none;display:flex;align-items:center;gap:9px;flex-shrink:0}
 .nav-brand-name{display:flex;flex-direction:column}
-.nav-brand-main{font-size:15px;font-weight:300;color:var(--txt);line-height:1.1}
-.nav-brand-main em{font-style:italic;color:var(--dourado)}
-.nav-brand-sub{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--txt-d);margin-top:1px}
+.nav-brand-main{font-size:15px;font-weight:300;color:#F5F0E8;line-height:1.1}
+.nav-brand-main em{font-style:italic;color:#D4B87A}
+.nav-brand-sub{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,.42);margin-top:1px}
 .nav-logo{width:28px;height:28px;flex-shrink:0}
 .nav-links{display:flex;align-items:center;gap:4px}
-.nav-link{font-size:12px;font-weight:500;color:var(--txt-d);text-decoration:none;letter-spacing:.04em;padding:6px 12px;border-radius:4px;transition:.2s;white-space:nowrap}
-.nav-link:hover{color:var(--txt);background:rgba(245,240,232,.05)}
+.nav-link{font-size:12px;font-weight:500;color:rgba(245,240,232,.65);text-decoration:none;letter-spacing:.04em;padding:6px 12px;border-radius:4px;transition:.2s;white-space:nowrap}
+.nav-link:hover{color:#F5F0E8;background:rgba(245,240,232,.05)}
 .nav-cta{background:var(--dourado);color:var(--azul-dark);padding:8px 20px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.2s;white-space:nowrap;flex-shrink:0}
 .nav-cta:hover{background:var(--dourado-bright)}
 .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:8px;border:none;background:none}
-.hamburger span{width:22px;height:2px;background:var(--txt);border-radius:2px}
+.hamburger span{width:22px;height:2px;background:#F5F0E8;border-radius:2px}
 .nav-mobile{display:none;flex-direction:column;gap:2px;padding:10px 16px 14px;border-top:1px solid rgba(184,153,104,.08)}
 .nav-mobile .nav-link{padding:10px 14px;border-radius:6px}
 .nav-mobile.open{display:flex}
@@ -98,7 +98,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   background:linear-gradient(
     to right,
     transparent 60%,
-    var(--azul) 100%
+    #1E2A3A 100%
   );
   z-index:2;
   pointer-events:none;
@@ -412,25 +412,25 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .cta-note{font-size:11px;color:var(--txt-d);margin-top:16px;letter-spacing:.06em;position:relative;z-index:1}
 .btn-ghost{font-size:13px;color:var(--txt-d);text-decoration:none;letter-spacing:.04em;border-bottom:1px solid rgba(245,240,232,.12);padding-bottom:2px;transition:.25s}
 .btn-ghost:hover{color:var(--txt);border-color:rgba(30,42,58,.35)}
-.footer{background:var(--creme);border-top:1px solid rgba(138,107,58,.2);padding:40px 0 28px}
+.footer{background:rgba(11,17,25,.98);border-top:1px solid rgba(184,153,104,.15);padding:40px 0 28px}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-.footer-brand-name{font-family:var(--fm);font-size:18px;font-weight:300;color:var(--txt);margin-bottom:4px}
-.footer-brand-name em{font-style:italic;color:var(--dourado)}
-.footer-tagline{font-size:12px;color:var(--txt-d);line-height:1.5;margin-top:6px;max-width:220px}
-.footer-section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:14px}
+.footer-brand-name{font-family:var(--fm);font-size:18px;font-weight:300;color:#F5F0E8;margin-bottom:4px}
+.footer-brand-name em{font-style:italic;color:#D4B87A}
+.footer-tagline{font-size:12px;color:rgba(245,240,232,.5);line-height:1.5;margin-top:6px;max-width:220px}
+.footer-section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#D4B87A;margin-bottom:14px}
 .footer-nav{display:flex;flex-direction:column;gap:8px}
-.footer-nav a{font-size:13px;color:rgba(30,42,58,.55);text-decoration:none;transition:.2s}
-.footer-nav a:hover{color:var(--txt)}
+.footer-nav a{font-size:13px;color:rgba(245,240,232,.45);text-decoration:none;transition:.2s}
+.footer-nav a:hover{color:#F5F0E8}
 .footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
-.footer-contact-icon{color:var(--dourado);flex-shrink:0;margin-top:1px;font-size:14px}
-.footer-contact-text{font-size:13px;color:rgba(30,42,58,.65);text-decoration:none;transition:.2s;display:block}
-.footer-contact-text:hover{color:var(--txt)}
+.footer-contact-icon{color:#D4B87A;flex-shrink:0;margin-top:1px;font-size:14px}
+.footer-contact-text{font-size:13px;color:rgba(245,240,232,.55);text-decoration:none;transition:.2s;display:block}
+.footer-contact-text:hover{color:#F5F0E8}
 .footer-wa-block{margin-top:16px;padding:14px 18px;background:rgba(184,153,104,.08);border:1px solid rgba(184,153,104,.18);border-radius:6px;text-align:center}
-.footer-wa-label{font-size:10px;color:var(--txt-d);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.footer-wa-label{font-size:10px;color:rgba(245,240,232,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
 .footer-wa-btn{display:inline-block;background:var(--dourado);color:var(--azul-dark);padding:10px 22px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.2s}
 .footer-wa-btn:hover{background:var(--dourado-bright)}
 .footer-bottom{border-top:1px solid rgba(184,153,104,.08);padding-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.footer-copy{font-size:11px;color:rgba(30,42,58,.35)}
+.footer-copy{font-size:11px;color:rgba(245,240,232,.2)}
 .del-phases{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin-bottom:32px}
 .del-phase{background:var(--azul-card);border:1px solid var(--azul-border);border-radius:8px;padding:22px 18px;transition:.25s;display:flex;flex-direction:column}
 .del-phase:hover{border-color:var(--azul-border-gold)}
@@ -1140,7 +1140,7 @@ document.querySelectorAll('.pv-card').forEach(function(card){
     <div class="footer-grid">
       <div>
         <div class="footer-brand-name">Daniel <em>Palhano</em></div>
-        <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dourado);margin-top:2px;margin-bottom:8px">Método Órbita CORE</div>
+        <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#D4B87A;margin-top:2px;margin-bottom:8px">Método Órbita CORE</div>
         <p class="footer-tagline">Estrategista de Experiência do Cliente com mais de 20 anos transformando jornadas em crescimento real.</p>
       </div>
       <div>
