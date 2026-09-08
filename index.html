@@ -456,25 +456,25 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .cta-note{font-size:11px;color:rgba(245,240,232,.4);margin-top:16px;letter-spacing:.06em;position:relative;z-index:1}
 .btn-ghost{font-size:15px;font-weight:600;color:rgba(245,240,232,.75);text-decoration:none;letter-spacing:0;border-bottom:1px solid rgba(245,240,232,.25);padding-bottom:2px;transition:.2s}
 .btn-ghost:hover{color:#F5F0E8;border-bottom-color:rgba(245,240,232,.5)}
-.footer{background:rgba(11,17,25,.98);border-top:1px solid rgba(184,153,104,.15);padding:40px 0 28px}
+.footer{background:var(--color-surface);border-top:1px solid var(--color-border);padding:40px 0 28px}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-.footer-brand-name{font-family:var(--fm);font-size:18px;font-weight:300;color:#F5F0E8;margin-bottom:4px}
-.footer-brand-name em{font-style:italic;color:#D4B87A}
-.footer-tagline{font-size:12px;color:rgba(245,240,232,.5);line-height:1.5;margin-top:6px;max-width:220px}
-.footer-section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#D4B87A;margin-bottom:14px}
+.footer-brand-name{font-family:var(--fm);font-size:18px;font-weight:600;color:var(--color-text-primary);margin-bottom:4px}
+.footer-brand-name em{font-style:italic;color:var(--color-primary)}
+.footer-tagline{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-top:6px;max-width:220px}
+.footer-section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--color-primary);margin-bottom:14px}
 .footer-nav{display:flex;flex-direction:column;gap:8px}
-.footer-nav a{font-size:13px;color:rgba(245,240,232,.45);text-decoration:none;transition:.2s}
-.footer-nav a:hover{color:#F5F0E8}
+.footer-nav a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;transition:.2s}
+.footer-nav a:hover{color:var(--color-text-primary)}
 .footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
-.footer-contact-icon{color:#D4B87A;flex-shrink:0;margin-top:1px;font-size:14px}
-.footer-contact-text{font-size:13px;color:rgba(245,240,232,.55);text-decoration:none;transition:.2s;display:block}
-.footer-contact-text:hover{color:#F5F0E8}
+.footer-contact-icon{color:var(--color-primary);flex-shrink:0;margin-top:1px;font-size:14px}
+.footer-contact-text{font-size:13px;color:var(--color-text-secondary);text-decoration:none;transition:.2s;display:block}
+.footer-contact-text:hover{color:var(--color-text-primary)}
 .footer-wa-block{margin-top:16px;padding:14px 18px;background:rgba(184,153,104,.08);border:1px solid rgba(184,153,104,.18);border-radius:6px;text-align:center}
-.footer-wa-label{font-size:10px;color:rgba(245,240,232,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.footer-wa-label{font-size:10px;color:var(--color-text-secondary);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
 .footer-wa-btn{display:inline-block;background:var(--dourado);color:var(--azul-dark);padding:10px 22px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.2s}
 .footer-wa-btn:hover{background:var(--dourado-bright)}
 .footer-bottom{border-top:1px solid rgba(184,153,104,.08);padding-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.footer-copy{font-size:11px;color:rgba(245,240,232,.2)}
+.footer-copy{font-size:11px;color:var(--color-text-muted)}
 /* Processo 01-04 — item 17: evitar quatro caixas pesadas; número
    grande e discreto, conexão visual sutil entre etapas. */
 .del-phases{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin-bottom:32px}
@@ -1207,7 +1207,7 @@ document.querySelectorAll('.pv-card').forEach(function(card){
     <div class="footer-grid">
       <div>
         <div class="footer-brand-name">Daniel <em>Palhano</em></div>
-        <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#D4B87A;margin-top:2px;margin-bottom:8px">Método Órbita CORE</div>
+        <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-primary);margin-top:2px;margin-bottom:8px">Método Órbita CORE</div>
         <p class="footer-tagline">Estrategista de Experiência do Cliente com mais de 20 anos transformando jornadas em crescimento real.</p>
       </div>
       <div>
