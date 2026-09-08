@@ -583,6 +583,23 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .s-hero-video .hero-metrics{margin-left:auto;margin-right:auto}
 .s-hero-video .hero-eyebrow{justify-content:center}
 
+/* Hero com foto de fundo: texto SEMPRE claro, pois fica sobre a foto
+   escurecida pelo scrim (.hero-video-scrim), independente do tema
+   claro/escuro geral da página — a foto em si nunca muda de tom. */
+.s-hero-video .hero-eyebrow,
+.s-hero-video .hero-eyebrow::before{color:#D4B87A}
+.s-hero-video .hero-headline{color:#F5F0E8}
+.s-hero-video .hero-headline em{color:#D4B87A}
+.s-hero-video .hero-tagline{color:rgba(245,240,232,.75)}
+.s-hero-video .hero-tagline-list li{color:rgba(245,240,232,.75)}
+.s-hero-video .hero-tagline-list li::before{color:#D4B87A}
+.s-hero-video .hero-tagline-list strong{color:#F5F0E8}
+.s-hero-video .hm-num{color:#D4B87A}
+.s-hero-video .hm-label{color:#F5F0E8}
+.s-hero-video .hm-sub{color:rgba(245,240,232,.5)}
+.s-hero-video .btn-outline{color:rgba(245,240,232,.75);border-bottom-color:rgba(245,240,232,.3)}
+.s-hero-video .btn-outline:hover{color:#F5F0E8;border-bottom-color:rgba(245,240,232,.6)}
+
 .s-video-explain{padding:84px 0;position:relative}
 .ve-player{max-width:760px;margin:0 auto;border-radius:10px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(20,31,43,.35)}
 .ve-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#1c2940,#0f1822);display:flex;align-items:center;justify-content:center;position:relative}
