@@ -486,7 +486,10 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .del-phases{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin-bottom:32px}
 .del-phase{background:transparent;border:none;border-top:2px solid var(--color-border);padding:24px 18px 0;transition:.25s;display:flex;flex-direction:column}
 .del-phase:hover{border-top-color:var(--color-primary)}
-.del-phase-num{font-family:var(--fm);font-size:32px;font-weight:600;color:var(--color-primary);line-height:1;margin-bottom:10px}
+/* Fase 3 (item 12): números como elemento gráfico — grandes e em
+   tom neutro muito claro, hierarquia por tipografia/espaço, não
+   pela cor de destaque (que fica para título/descrição). */
+.del-phase-num{font-family:var(--fm);font-size:clamp(48px,6vw,68px);font-weight:600;color:#E5E7EB;line-height:1;margin-bottom:6px}
 .del-phase-label{font-size:13px;font-weight:700;color:var(--color-text-primary);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
 .del-phase-desc{font-size:11px;color:var(--color-primary);letter-spacing:.02em;margin-bottom:10px;line-height:1.4}
 .del-phase-sub{font-size:13.5px;color:var(--color-text-muted);line-height:1.55}
@@ -1299,7 +1302,7 @@ function orbitFrame(ts){
     if(tl.length>2){orbitCtx.save();orbitCtx.lineCap="round";orbitCtx.lineJoin="round";for(var i=1;i<tl.length;i++){var pg=i/tl.length;orbitCtx.beginPath();orbitCtx.moveTo(tl[i-1].x,tl[i-1].y);orbitCtx.lineTo(tl[i].x,tl[i].y);orbitCtx.lineWidth=pg*9;orbitCtx.strokeStyle=p.color+Math.floor(pg*.16*255).toString(16).padStart(2,"0");orbitCtx.stroke()}var st2=Math.floor(tl.length*.5);for(var j=st2;j<tl.length;j++){var pg2=(j-st2)/(tl.length*.5);orbitCtx.beginPath();orbitCtx.moveTo(tl[j-1].x,tl[j-1].y);orbitCtx.lineTo(tl[j].x,tl[j].y);orbitCtx.lineWidth=pg2*4;orbitCtx.strokeStyle=p.color+Math.floor(pg2*.8*255).toString(16).padStart(2,"0");orbitCtx.stroke()}orbitCtx.restore()}
     var nd=document.getElementById("v2-node-"+k);nd.style.left=(x-ns/2)+"px";nd.style.top=(y-ns/2)+"px";
   });
-  rafId=requestAnimationFrame(orbitFrame);
+  if (!window.__orbitReduceMotion) { rafId=requestAnimationFrame(orbitFrame); }
 }
 function setPilarActive(key){
   document.querySelectorAll(".core-static-card").forEach(function(c){c.classList.remove("active")});
@@ -1333,7 +1336,18 @@ document.querySelectorAll(".core-static-card").forEach(function(card){
 });
 var tIdx=0;function rotateTrig(){var el3=document.getElementById("orbit-trigger");el3.style.opacity="0";setTimeout(function(){el3.textContent=TRIGS[tIdx++%TRIGS.length];el3.style.opacity="1"},450)}
 setTimeout(function(){rotateTrig();setInterval(rotateTrig,4600)},1800);
-function init(){buildOrbit();rafId=requestAnimationFrame(orbitFrame);window.addEventListener("resize",function(){cancelAnimationFrame(rafId);trails={c:[],o:[],r:[],e:[]};baseT=null;buildOrbit();rafId=requestAnimationFrame(orbitFrame)})}
+function init(){
+  buildOrbit();
+  // Fase 3 (item 14): usuários que pedem redução de movimento não
+  // recebem a animação orbital contínua — os pilares ainda são
+  // posicionados corretamente (1 frame), só sem o loop indefinido.
+  window.__orbitReduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  rafId=requestAnimationFrame(orbitFrame);
+  window.addEventListener("resize",function(){
+    cancelAnimationFrame(rafId);trails={c:[],o:[],r:[],e:[]};baseT=null;buildOrbit();
+    rafId=requestAnimationFrame(orbitFrame)
+  })
+}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}
 </script>
 <script>
