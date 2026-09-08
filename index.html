@@ -32,9 +32,9 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 :root{
-  --creme:#F5F0E8;--azul:#1E2A3A;--azul-dark:#141F2B;--azul-mid:#243244;
-  --azul-card:rgba(30,42,58,0.035);--azul-border:rgba(30,42,58,0.12);
-  --azul-border-gold:rgba(138,107,58,0.4);
+  --creme:#FFFFFF;--azul:#1E2A3A;--azul-dark:#141F2B;--azul-mid:#243244;
+  --azul-card:rgba(30,42,58,0.03);--azul-border:rgba(30,42,58,0.1);
+  --azul-border-gold:rgba(138,107,58,0.35);
   --dourado:#8A6B3A;--dourado-bright:#6B5024;
   --fm:'Fraunces',Georgia,serif;--fi:'Inter',sans-serif;
   --radius:8px;--ease:cubic-bezier(0.16,1,0.3,1);
@@ -46,7 +46,7 @@ html{scroll-behavior:smooth}
      de agora. Paleta mantida fiel à marca: creme/navy/dourado. */
   --color-background:#FFFFFF;
   --color-surface:#FFFFFF;
-  --color-surface-secondary:#F5F0E8;
+  --color-surface-secondary:#F7F8FA;
   --color-text-primary:#1E2A3A;
   --color-text-secondary:rgba(30,42,58,.7);
   --color-text-muted:rgba(30,42,58,.5);
@@ -54,7 +54,7 @@ html{scroll-behavior:smooth}
   --color-primary-bright:#D4B87A;
   --color-navy:#1E2A3A;
   --color-navy-dark:#141F2B;
-  --color-border:rgba(30,42,58,.12);
+  --color-border:rgba(30,42,58,.1);
 
   --radius-sm:8px;--radius-md:14px;--radius-lg:20px;
   --shadow-sm:0 1px 2px rgba(30,42,58,.06);
@@ -265,7 +265,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .ev-src{font-size:9px;color:var(--txt-d);letter-spacing:.04em}
 
 /* MÉTODO */
-.s-core{background:var(--creme);padding:96px 0 0;overflow:hidden}
+.s-core{background:var(--color-surface-secondary);padding:96px 0 0;overflow:hidden}
 .core-header{text-align:center;margin-bottom:56px}
 .core-tagline{font-size:16px;color:var(--txt-m);max-width:600px;margin:20px auto 0;line-height:1.7;text-align:center}
 /* Método CORE — item 11 do brief: evitar sensação de "4 cards de
@@ -284,7 +284,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .orb-node-v2.node-active{box-shadow:0 0 0 5px rgba(255,255,255,.35);transform:scale(1.12)}
 @media(max-width:700px){.core-grid-static{grid-template-columns:1fr}}
 .section-light{background:var(--creme);--txt:#1E2A3A;--txt-m:rgba(30,42,58,.7);--txt-d:rgba(30,42,58,.45);--azul-card:rgba(30,42,58,.035);--azul-border:rgba(30,42,58,.12);--azul-border-gold:rgba(138,107,58,.4);--dourado:#8A6B3A;--dourado-bright:#6B5024}
-.s-test{padding:70px 0;position:relative;overflow:hidden}
+.s-test{background:var(--color-surface-secondary);padding:70px 0;position:relative;overflow:hidden}
 /* Depoimentos — item 15: social proof sofisticada, sem aspas
    gigantes/estrelas/backgrounds pesados. Divisor sutil no lugar
    de card completo, texto e crédito com prioridade. */
