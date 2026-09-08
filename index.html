@@ -72,10 +72,11 @@ html{scroll-behavior:smooth}
 }
 body{background:var(--creme);color:var(--txt);font-family:var(--fi);overflow-x:hidden;font-size:16px;line-height:1.6}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.4}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+/* Fase 3 (item 2): translateY 12-20px, duração 450-600ms */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
 .reveal.visible{opacity:1;transform:none}
-.reveal.from-left{transform:translateX(-24px)}.reveal.from-left.visible{transform:none}
-.reveal.from-right{transform:translateX(24px)}.reveal.from-right.visible{transform:none}
+.reveal.from-left{transform:translateX(-18px)}.reveal.from-left.visible{transform:none}
+.reveal.from-right{transform:translateX(18px)}.reveal.from-right.visible{transform:none}
 .reveal.scale-in{transform:scale(.97)}.reveal.scale-in.visible{transform:scale(1)}
 .wrap{max-width:1140px;margin:0 auto;padding:0 40px}
 .eyebrow{font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--dourado);margin-bottom:12px}
@@ -684,6 +685,20 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .pv-time{font-size:11px;color:var(--txt-d)}
 @media(max-width:700px){
   .pv-grid{grid-template-columns:1fr}
+}
+
+/* Fase 3 (item 14): respeita prefers-reduced-motion — usuários que
+   pedem redução de movimento recebem experiência estável, sem
+   animações não essenciais. Cobre todas as transições/animações
+   CSS de uma vez, sem precisar duplicar regra por regra. */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+  .reveal{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
