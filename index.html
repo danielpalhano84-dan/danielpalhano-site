@@ -38,7 +38,7 @@ html{scroll-behavior:smooth}
   --dourado:#8A6B3A;--dourado-bright:#6B5024;
   --fm:'Fraunces',Georgia,serif;--fi:'Inter',sans-serif;
   --radius:8px;--ease:cubic-bezier(0.16,1,0.3,1);
-  --txt:#1E2A3A;--txt-m:rgba(30,42,58,.7);--txt-d:rgba(30,42,58,.45);
+  --txt:#1E2A3A;--txt-m:rgba(30,42,58,.82);--txt-d:rgba(30,42,58,.62);
 
   /* ── Design tokens — redesign visual (item 23 do brief) ──────────
      Não substituem as variáveis acima (usadas em centenas de lugares
@@ -48,8 +48,8 @@ html{scroll-behavior:smooth}
   --color-surface:#FFFFFF;
   --color-surface-secondary:#F7F8FA;
   --color-text-primary:#1E2A3A;
-  --color-text-secondary:rgba(30,42,58,.7);
-  --color-text-muted:rgba(30,42,58,.5);
+  --color-text-secondary:rgba(30,42,58,.82);
+  --color-text-muted:rgba(30,42,58,.62);
   --color-primary:#8A6B3A;
   --color-primary-bright:#D4B87A;
   --color-navy:#1E2A3A;
@@ -289,7 +289,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .core-integrado-note strong{color:var(--txt)}
 .orb-node-v2.node-active{box-shadow:0 0 0 5px rgba(255,255,255,.35);transform:scale(1.12)}
 @media(max-width:700px){.core-grid-static{grid-template-columns:1fr}}
-.section-light{background:var(--creme);--txt:#1E2A3A;--txt-m:rgba(30,42,58,.7);--txt-d:rgba(30,42,58,.45);--azul-card:rgba(30,42,58,.035);--azul-border:rgba(30,42,58,.12);--azul-border-gold:rgba(138,107,58,.4);--dourado:#8A6B3A;--dourado-bright:#6B5024}
+.section-light{background:var(--creme);--txt:#1E2A3A;--txt-m:rgba(30,42,58,.82);--txt-d:rgba(30,42,58,.62);--azul-card:rgba(30,42,58,.035);--azul-border:rgba(30,42,58,.12);--azul-border-gold:rgba(138,107,58,.4);--dourado:#8A6B3A;--dourado-bright:#6B5024}
 .s-test{background:var(--color-surface-secondary);padding:112px 0;position:relative;overflow:hidden}
 /* Depoimentos — item 15: social proof sofisticada, sem aspas
    gigantes/estrelas/backgrounds pesados. Divisor sutil no lugar
@@ -305,8 +305,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 #orbit-canvas-v2{position:absolute;top:0;left:0;pointer-events:none;z-index:5;display:block}
 #core-center-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background:var(--azul-dark);border:2px solid var(--dourado);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;z-index:20;transition:all .3s}
 #core-center-btn:hover,#core-center-btn.active{border-color:var(--dourado-bright);box-shadow:0 0 0 6px rgba(184,153,104,.12),0 0 28px rgba(184,153,104,.3)}
-#core-center-label{color:var(--txt);font-family:var(--fm);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-#core-center-sub{color:var(--dourado);letter-spacing:.1em;text-transform:uppercase;margin-top:1px;font-size:9px;font-weight:700}
+#core-center-label{color:#F5F0E8;font-family:var(--fm);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+#core-center-sub{color:#D4B87A;letter-spacing:.1em;text-transform:uppercase;margin-top:1px;font-size:9px;font-weight:700}
 .orb-node-v2{position:absolute;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-weight:600;border:2px solid rgba(30,42,58,.15);z-index:15;box-shadow:0 4px 18px rgba(0,0,0,.15);transition:all .25s}
 .orb-node-v2:hover{border-color:rgba(30,42,58,.5)!important;transform:scale(1.12);filter:brightness(1.05)}
 .orb-node-v2.active{border-color:rgba(30,42,58,.6)!important;box-shadow:0 0 0 5px rgba(30,42,58,.1)!important;transform:scale(1.12)}
